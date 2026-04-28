@@ -16,6 +16,10 @@ prompt_contract:
     Start with DOC/framework/roles/ai-context.yaml, choose the matching role for the
     current planning task, and ensure all generated docs include a compact
     ai-context.yaml, a human README, shared invariants, and minimal read paths.
+    If the task starts from DOC/master-plan/plan.md or from an equivalent master-plan
+    brief pasted into chat and DOC/project-plan/ai-context.yaml does not exist yet,
+    treat the work as documentation generation and build the DOC/project-plan root
+    docs plus the downstream role folders before calling the planning complete.
   workflow_guide:
     - DOC/framework/roles/documentation-workflow-playbook.md
 

@@ -64,6 +64,11 @@ Internal read order:
 Output:
 - complete project-specific documentation under `DOC/project-plan/`
 
+Clarification:
+- `DOC/master-plan/plan.md` is a Stage A input artifact, not the Stage A completion artifact.
+- Editing or improving `DOC/master-plan/plan.md` does not satisfy Stage A by itself.
+- Stage A is complete only when the required `DOC/project-plan/` root files and downstream role docs exist.
+
 Rule:
 - no code implementation is allowed during this stage
 
@@ -78,6 +83,10 @@ Additional rule for later fresh, scale, or hybrid planning inside Stage B:
 - AI must materialize the plan as a markdown artifact under `DOC/project-plan/` before updating the execution tracker or recommending implementation.
 - AI must also materialize the affected downstream role-specific planning docs in their owning folders before updating the execution tracker or recommending implementation.
 - chat summaries are secondary and never replace the canonical planning artifact.
+
+Entry-point clarification:
+- If the user provides the master plan or orchestration brief directly in chat instead of only through `DOC/master-plan/plan.md`, AI must treat that content as the current Stage A source and still generate the required `DOC/project-plan/` outputs in the same turn.
+- If `DOC/project-plan/ai-context.yaml` does not exist yet, the workflow is still in Stage A even if `DOC/master-plan/plan.md` has already been edited.
 
 Purpose:
 - keeps implementation grounded in the already-generated project docs instead of re-running orchestration logic
@@ -137,6 +146,8 @@ For cross-role authority:
 - `DOC/project-plan/shared-contracts/ai-context.yaml`
 
 If AI starts from any other file first, the workflow is off-track.
+
+Editing `DOC/master-plan/plan.md` may improve the source input, but it never replaces the requirement to generate the project layer under `DOC/project-plan/`.
 
 ---
 

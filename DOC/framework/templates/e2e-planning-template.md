@@ -59,7 +59,7 @@ Use this section before writing the plan body so the planner knows which framewo
 | Folder | Minimum Files | Required When | Notes |
 |---|---|---|---|
 | `DOC/project-plan/shared-contracts/` | `ai-context.yaml`, `README.md` | Always | Holds system-wide contracts, invariants, route rules, state models, and decision logs. |
-| `DOC/project-plan/frontend/` | `ai-context.yaml`, `README.md` | Always | Public and authenticated UI planning. |
+| `DOC/project-plan/frontend/` | `ai-context.yaml`, `README.md`, `frontend-plan.md`, `page-*.md` | Always | Public and authenticated UI planning. Use `frontend-plan.md` as the master architecture file and add separate page docs for each core route and reusable dynamic page template when page planning is in scope. |
 | `DOC/project-plan/backend/` | `ai-context.yaml`, `README.md` | Always | Services, jobs, integrations, storage, and reliability ownership. |
 | `DOC/project-plan/api-and-data/` | `ai-context.yaml`, `README.md` | Always | APIs, schemas, events, migrations, and data contracts. |
 | `DOC/project-plan/security/` | `ai-context.yaml`, `README.md` | Always | Auth, authorization, privacy, abuse protection, and compliance rules. |
@@ -85,6 +85,8 @@ Create these when the scope requires them, and include at minimum `ai-context.ya
 - Root `README.md` must summarize folder ownership, statuses, and the active planning artifact.
 - Every created folder must explain why it exists, what it owns, and which guide files it followed.
 - If a folder is intentionally not created, list it in the plan with a reason.
+- Frontend planning is incomplete if it stops at one summary markdown file while the scope requires page planning. In that case, `DOC/project-plan/frontend/` must also include separate page-level markdown files for each core page and reusable dynamic template.
+- Every frontend page file must define route goal, primary audience intent, section-by-section content or component planning, conversion areas, responsive behavior, and relevant state coverage.
 
 ## 3. Planning Mode And Objective
 - Planning mode: fresh, scale, or hybrid
@@ -397,6 +399,11 @@ For each phase below, complete every field and list the exact project-plan folde
 - Exit criteria:
 - Risks and fallback:
 
+Frontend surface completeness rule:
+- List the exact frontend page files that will be created or updated.
+- Include separate markdown files for each core route and reusable dynamic template in scope.
+- Do not mark this phase complete if the page inventory is missing or if section-level planning still lives only in a summary file.
+
 ### Backend, Jobs, And Integrations
 - Guide decision sources:
 - Folders or files to create or update:
@@ -498,5 +505,6 @@ Each task must include owner hint, dependencies, target folders or files, and th
 - Root project-plan routing docs are updated.
 - Core project-plan folders exist with `ai-context.yaml` and `README.md`.
 - Scope-required conditional folders are created or intentionally excluded with reasons.
+- Frontend scope includes `frontend-plan.md` plus separate page-level docs for each core page and reusable dynamic template when page planning is in scope.
 - Observability, release control, environments, auth, billing, compliance, abuse protection, recovery, and QA gates are explicitly resolved.
 - No major planning ambiguity remains that would force implementation-time guessing.

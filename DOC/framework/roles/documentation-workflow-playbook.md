@@ -26,6 +26,13 @@ recommended_start: fullstack-contract-orchestrator
 
 Delete only if the old plan is structurally incompatible and would create confusion.
 
+## What To Do With The Master Plan Input
+
+- Treat `DOC/master-plan/plan.md` as the source input for documentation generation, not as the completion artifact.
+- If the user pasted the master-plan brief directly in chat, normalize it into `DOC/master-plan/plan.md` or treat the chat content as equivalent source input, then continue generating `DOC/project-plan/` artifacts in the same turn.
+- If `DOC/project-plan/ai-context.yaml` does not exist yet, you are still in Phase 0 or Stage A even if `DOC/master-plan/plan.md` has already been edited.
+- Do not stop after improving the master plan; continue until the required root and role-specific project docs exist.
+
 ## Recommended Workflow
 
 ### Phase 0: Source Of Truth Setup
@@ -75,6 +82,7 @@ Input rule:
 Output rule:
 - frontend may define presentation and interaction
 - frontend may not invent server-backed states, payloads, permissions, or integration behavior
+- if page planning is in scope, frontend must output a master architecture doc plus separate page-level docs for each core page and reusable dynamic template
 
 ### Phase 3: Backend Planning
 
@@ -193,6 +201,8 @@ This is the source-of-truth phase. Do not write frontend-only or backend-only as
 Start with [project ai-context.yaml] and use the frontend-ui-ux-generator role.
 Read the shared contract docs first.
 Generate the frontend plan in [target folder or frontend subfolder].
+When page planning is in scope, generate a master frontend architecture file and separate markdown files for each core page and reusable page template in the target folder.
+Each page file must include route purpose, audience intent, section-by-section planning, CTA model, responsive behavior, and relevant state coverage.
 Do not invent payloads, permissions, server states, or integration side effects.
 If any backend contract is missing, record it in an assumptions ledger instead of inventing behavior.
 ```
