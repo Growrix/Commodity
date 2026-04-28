@@ -37,27 +37,27 @@ export default function BuyersPage() {
               <form className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">Full Name <span className="text-red-500">*</span></label>
-                    <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Your full name" />
+                    <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Full Name <span className="text-red-500">*</span></label>
+                    <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Your full name" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">Company <span className="text-red-500">*</span></label>
-                    <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Your company name" />
+                    <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Company <span className="text-red-500">*</span></label>
+                    <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Your company name" />
                   </div>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">Work Email <span className="text-red-500">*</span></label>
-                    <input type="email" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="you@company.com" />
+                    <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Work Email <span className="text-red-500">*</span></label>
+                    <input type="email" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="you@company.com" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">Country / Region <span className="text-red-500">*</span></label>
-                    <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Your country" />
+                    <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Country / Region <span className="text-red-500">*</span></label>
+                    <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Your country" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#374151] mb-1.5">Commodity Required <span className="text-red-500">*</span></label>
-                  <select className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
+                  <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Commodity Required <span className="text-red-500">*</span></label>
+                  <select className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
                     <option value="">Select commodity category</option>
                     <option>Agriculture — Grains</option>
                     <option>Agriculture — Oilseeds</option>
@@ -72,17 +72,17 @@ export default function BuyersPage() {
                 </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">Volume Required</label>
-                    <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. 5,000 MT" />
+                    <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Volume Required</label>
+                    <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. 5,000 MT" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">Required Delivery Date</label>
-                    <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. June 2026" />
+                    <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Required Delivery Date</label>
+                    <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. June 2026" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#374151] mb-1.5">Additional Requirements</label>
-                  <textarea rows={4} className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Specification, grade, port of destination, payment terms, or other notes..." />
+                  <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Additional Requirements</label>
+                  <textarea rows={4} className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Specification, grade, port of destination, payment terms, or other notes..." />
                 </div>
                 <Button type="submit" variant="primary" size="lg">
                   Submit Inquiry
@@ -92,7 +92,7 @@ export default function BuyersPage() {
             </div>
 
             <div className="space-y-4">
-              <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[#e5e7eb]">
+              <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[var(--color-border)]">
                 <h3 className="font-bold text-[var(--color-ink)] mb-4">What Happens Next</h3>
                 <div className="space-y-3">
                   {[
@@ -105,7 +105,7 @@ export default function BuyersPage() {
                       <div className="w-5 h-5 bg-[var(--color-gold)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold text-[var(--color-ink)]">
                         {i + 1}
                       </div>
-                      <p className="text-sm text-[#374151]">{step}</p>
+                      <p className="text-sm text-[var(--color-text-secondary)]">{step}</p>
                     </div>
                   ))}
                 </div>

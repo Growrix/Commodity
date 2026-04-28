@@ -77,7 +77,7 @@ export default async function FamilyPage({
             <div className="lg:col-span-2 space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-4">Specifications & Grades</h2>
-                <div className="bg-[var(--color-surface)] rounded-xl border border-[#e5e7eb] overflow-hidden">
+                <div className="bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] overflow-hidden">
                   <table className="w-full text-sm">
                     <thead className="bg-[var(--color-ink)] text-white">
                       <tr>
@@ -86,7 +86,7 @@ export default async function FamilyPage({
                         <th className="text-left px-4 py-3">Standard</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#e5e7eb]">
+                    <tbody className="divide-y divide-[var(--color-border)]">
                       {[
                         ["Grade / Purity", "Commercial Standard", "ISO / ASTM"],
                         ["Moisture Content", "As per spec", "Buyer's spec"],
@@ -95,9 +95,9 @@ export default async function FamilyPage({
                         ["Min. Order Quantity", "500 MT+", "Negotiable"],
                       ].map(([param, value, standard]) => (
                         <tr key={param} className="hover:bg-white">
-                          <td className="px-4 py-3 font-medium text-[#374151]">{param}</td>
-                          <td className="px-4 py-3 text-[#6b7280]">{value}</td>
-                          <td className="px-4 py-3 text-[#6b7280]">{standard}</td>
+                          <td className="px-4 py-3 font-medium text-[var(--color-text-secondary)]">{param}</td>
+                          <td className="px-4 py-3 text-[var(--color-text-muted)]">{value}</td>
+                          <td className="px-4 py-3 text-[var(--color-text-muted)]">{standard}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -116,7 +116,7 @@ export default async function FamilyPage({
                     "Fumigation Certificate",
                     "Packing List & Weight Certificate",
                   ].map((doc) => (
-                    <div key={doc} className="flex items-center gap-2 text-sm text-[#374151]">
+                    <div key={doc} className="flex items-center gap-2 text-sm text-[var(--color-text-secondary)]">
                       <FileText className="w-4 h-4 text-[var(--color-gold)]" />
                       {doc}
                     </div>
@@ -137,7 +137,7 @@ export default async function FamilyPage({
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
-              <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[#e5e7eb]">
+              <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[var(--color-border)]">
                 <h3 className="font-bold text-[var(--color-ink)] mb-4">Why Source With Us</h3>
                 <div className="space-y-3">
                   {[
@@ -146,7 +146,7 @@ export default async function FamilyPage({
                     { icon: Truck, text: "Full logistics coverage" },
                     { icon: FileText, text: "Compliant documentation" },
                   ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 text-sm text-[#374151]">
+                    <div key={text} className="flex items-center gap-2 text-sm text-[var(--color-text-secondary)]">
                       <Icon className="w-4 h-4 text-[var(--color-gold)]" />
                       {text}
                     </div>

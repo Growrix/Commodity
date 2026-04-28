@@ -25,11 +25,13 @@ export default function AnimatedSection({
     const el = ref.current;
     if (!el) return;
 
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           if (delay) {
-            setTimeout(() => el.classList.add("is-visible"), delay);
+            timeoutId = setTimeout(() => el.classList.add("is-visible"), delay);
           } else {
             el.classList.add("is-visible");
           }
@@ -40,7 +42,10 @@ export default function AnimatedSection({
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      if (timeoutId !== null) clearTimeout(timeoutId);
+      observer.disconnect();
+    };
   }, [delay, threshold]);
 
   return (

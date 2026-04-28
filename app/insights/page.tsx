@@ -91,7 +91,7 @@ export default function InsightsPage() {
       </section>
 
       {/* Topic Filters */}
-      <section className="bg-[var(--color-surface)] border-b border-[#e5e7eb] py-4">
+      <section className="bg-[var(--color-surface)] border-b border-[var(--color-border)] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2">
             {topics.map((topic, i) => (
@@ -100,7 +100,7 @@ export default function InsightsPage() {
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                   i === 0
                     ? "bg-[var(--color-ink)] text-white"
-                    : "bg-white border border-[#e5e7eb] text-[#374151] hover:border-[var(--color-ink)] hover:text-[var(--color-ink)]"
+                    : "bg-white border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-ink)] hover:text-[var(--color-ink)]"
                 }`}
               >
                 {topic}
@@ -122,18 +122,18 @@ export default function InsightsPage() {
               <Link
                 key={slug}
                 href={`/insights/${slug}`}
-                className="group block bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5"
+                className="group block bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xs font-bold uppercase tracking-wide text-[var(--color-gold)]">{category}</span>
-                  <span className="text-xs text-[#6b7280]">· {date}</span>
+                  <span className="text-xs text-[var(--color-text-muted)]">· {date}</span>
                 </div>
                 <h3 className="font-bold text-[var(--color-ink)] text-base mb-2 leading-snug group-hover:text-[var(--color-gold)] transition-colors">
                   {title}
                 </h3>
-                <p className="text-sm text-[#6b7280] leading-relaxed mb-4">{excerpt}</p>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-4">{excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#6b7280]">{readTime}</span>
+                  <span className="text-xs text-[var(--color-text-muted)]">{readTime}</span>
                   <div className="flex items-center gap-1 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)]">
                     Read
                     <ArrowRight className="w-4 h-4" />
@@ -150,18 +150,18 @@ export default function InsightsPage() {
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <BookOpen className="w-10 h-10 text-[var(--color-ink)] mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-3">Stay Ahead of the Market</h2>
-          <p className="text-[#6b7280] mb-6">
+          <p className="text-[var(--color-text-muted)] mb-6">
             Subscribe for weekly commodity market updates, pricing signals, and trade intelligence.
           </p>
           <div className="flex gap-2">
             <input
               type="email"
               placeholder="Your work email"
-              className="flex-1 px-4 py-3 border border-[#e5e7eb] rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]"
+              className="flex-1 px-4 py-3 border border-[var(--color-border)] rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]"
             />
             <Button href="/contact" variant="primary">Subscribe</Button>
           </div>
-          <p className="text-xs text-[#6b7280] mt-3">No spam. Unsubscribe anytime.</p>
+          <p className="text-xs text-[var(--color-text-muted)] mt-3">No spam. Unsubscribe anytime.</p>
         </div>
       </section>
 

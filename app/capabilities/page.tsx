@@ -121,7 +121,7 @@ export default function CapabilitiesPage() {
               <Link
                 key={slug}
                 href={`/capabilities/${slug}`}
-                className="block bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
+                className="block bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
                 <div className="w-12 h-12 bg-[var(--color-ink)] rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-[var(--color-gold)]" />
@@ -129,10 +129,10 @@ export default function CapabilitiesPage() {
                 <h3 className="font-bold text-[var(--color-ink)] text-lg mb-2 group-hover:text-[var(--color-gold)] transition-colors">
                   {title}
                 </h3>
-                <p className="text-sm text-[#6b7280] leading-relaxed mb-4">{description}</p>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-4">{description}</p>
                 <div className="space-y-1.5">
                   {metrics.map((m) => (
-                    <div key={m} className="flex items-center gap-2 text-xs text-[#374151]">
+                    <div key={m} className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
                       <div className="w-1.5 h-1.5 bg-[var(--color-gold)] rounded-full flex-shrink-0" />
                       {m}
                     </div>

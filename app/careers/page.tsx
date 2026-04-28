@@ -47,11 +47,11 @@ export default function CareersPage() {
             {openings.map(({ title, location, type, team }) => (
               <div
                 key={title}
-                className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl px-6 py-5 hover:shadow-md transition-all"
+                className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl px-6 py-5 hover:shadow-md transition-all"
               >
                 <div>
                   <h3 className="font-bold text-[var(--color-ink)] mb-1">{title}</h3>
-                  <div className="flex flex-wrap items-center gap-3 text-sm text-[#6b7280]">
+                  <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--color-text-muted)]">
                     <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5" />{location}</span>
                     <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{type}</span>
                     <span className="text-xs bg-[var(--color-ink)] text-white px-2 py-0.5 rounded-full">{team}</span>

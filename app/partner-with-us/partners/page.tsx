@@ -32,21 +32,21 @@ export default function PartnersPage() {
           <form className="space-y-5">
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Your Name <span className="text-red-500">*</span></label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Your Name <span className="text-red-500">*</span></label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Organisation <span className="text-red-500">*</span></label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Organisation <span className="text-red-500">*</span></label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Email <span className="text-red-500">*</span></label>
-              <input type="email" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Email <span className="text-red-500">*</span></label>
+              <input type="email" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Partnership Type</label>
-              <select className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Partnership Type</label>
+              <select className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
                 <option value="">Select partnership type</option>
                 <option>Long-term Supply Program</option>
                 <option>Joint Venture</option>
@@ -57,8 +57,8 @@ export default function PartnersPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Partnership Overview <span className="text-red-500">*</span></label>
-              <textarea rows={5} className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Describe your partnership proposal, goals, and timeline..." />
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Partnership Overview <span className="text-red-500">*</span></label>
+              <textarea rows={5} className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Describe your partnership proposal, goals, and timeline..." />
             </div>
             <Button type="submit" variant="primary" size="lg">
               Submit Partnership Inquiry

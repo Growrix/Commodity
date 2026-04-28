@@ -36,26 +36,26 @@ export default async function InsightArticlePage({ params }: { params: Promise<{
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             <article className="lg:col-span-2 prose prose-lg max-w-none">
-              <p className="text-[#6b7280] text-lg leading-relaxed mb-6">
+              <p className="text-[var(--color-text-muted)] text-lg leading-relaxed mb-6">
                 This market intelligence report covers current supply and demand dynamics,
                 trade flow patterns, and pricing signals relevant to buyers, suppliers,
                 and procurement teams operating in global commodity markets.
               </p>
               <h2 className="text-xl font-bold text-[var(--color-ink)] mt-8 mb-4">Market Overview</h2>
-              <p className="text-[#6b7280] leading-relaxed mb-6">
+              <p className="text-[var(--color-text-muted)] leading-relaxed mb-6">
                 Global commodity markets continue to be shaped by geopolitical shifts,
                 weather patterns, and structural demand growth in emerging economies.
                 This analysis draws on trade data, shipping indicators, and our own
                 transactional experience across major corridors.
               </p>
               <h2 className="text-xl font-bold text-[var(--color-ink)] mt-8 mb-4">Key Signals</h2>
-              <p className="text-[#6b7280] leading-relaxed mb-6">
+              <p className="text-[var(--color-text-muted)] leading-relaxed mb-6">
                 Procurement teams should monitor origin market production reports closely
                 as we approach the Northern Hemisphere harvest window. Price volatility
                 is expected to remain elevated through Q2 2026 before normalising.
               </p>
               <h2 className="text-xl font-bold text-[var(--color-ink)] mt-8 mb-4">Commercial Implications</h2>
-              <p className="text-[#6b7280] leading-relaxed">
+              <p className="text-[var(--color-text-muted)] leading-relaxed">
                 Buyers with flexible delivery windows should consider forward price
                 agreements to lock in current levels. Speak with our trading desk to
                 discuss your specific requirements and timing.
@@ -72,14 +72,14 @@ export default async function InsightArticlePage({ params }: { params: Promise<{
                   Request a Quote <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
-              <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[#e5e7eb]">
+              <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[var(--color-border)]">
                 <h3 className="font-bold text-[var(--color-ink)] mb-3">More Insights</h3>
                 <div className="space-y-3">
                   {["Urea Market Dynamics", "Red Sea Routing Strategies", "Palm Oil Outlook 2026"].map((t) => (
                     <Link
                       key={t}
                       href="/insights"
-                      className="flex items-center gap-2 text-sm text-[#374151] hover:text-[var(--color-gold)] transition-colors"
+                      className="flex items-center gap-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-gold)] transition-colors"
                     >
                       <ArrowRight className="w-3 h-3 flex-shrink-0" />
                       {t}

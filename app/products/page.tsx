@@ -98,7 +98,7 @@ export default function ProductsPage() {
       </section>
 
       {/* How to Evaluate */}
-      <section className="py-12 bg-[var(--color-surface)] border-b border-[#e5e7eb]">
+      <section className="py-12 bg-[var(--color-surface)] border-b border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
             {["Grade & Specification", "Origin Country", "Packaging Format", "Application", "Logistics Mode"].map((label) => (
@@ -106,7 +106,7 @@ export default function ProductsPage() {
                 <div className="w-8 h-8 bg-[var(--color-ink)] rounded mx-auto mb-2 flex items-center justify-center">
                   <Package className="w-4 h-4 text-[var(--color-gold)]" />
                 </div>
-                <span className="text-xs font-semibold text-[#374151]">{label}</span>
+                <span className="text-xs font-semibold text-[var(--color-text-secondary)]">{label}</span>
               </div>
             ))}
           </div>
@@ -134,12 +134,12 @@ export default function ProductsPage() {
                   <h2 className="text-xl font-bold text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-gold)] transition-colors">
                     {title}
                   </h2>
-                  <p className="text-sm text-[#6b7280] mb-4 max-w-xl leading-relaxed">{description}</p>
+                  <p className="text-sm text-[var(--color-text-muted)] mb-4 max-w-xl leading-relaxed">{description}</p>
                   <div className="flex flex-wrap gap-2">
                     {families.map((f) => (
                       <span
                         key={f}
-                        className="text-xs bg-white text-[#374151] px-3 py-1 rounded-full border border-[#e5e7eb]"
+                        className="text-xs bg-white text-[var(--color-text-secondary)] px-3 py-1 rounded-full border border-[var(--color-border)]"
                       >
                         {f}
                       </span>

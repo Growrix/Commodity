@@ -60,10 +60,10 @@ export default function TrustCenterPage() {
           <SectionHeader eyebrow="Formal Credentials" title="Certificates & Registrations" />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {certificates.map(({ name, description, issuer }) => (
-              <div key={name} className="bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 text-center">
+              <div key={name} className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 text-center">
                 <Award className="w-8 h-8 text-[var(--color-gold)] mx-auto mb-3" />
                 <h3 className="font-bold text-[var(--color-ink)] mb-1">{name}</h3>
-                <p className="text-sm text-[#6b7280] mb-2">{description}</p>
+                <p className="text-sm text-[var(--color-text-muted)] mb-2">{description}</p>
                 <span className="text-xs text-[var(--color-gold)] font-medium">Issued by {issuer}</span>
               </div>
             ))}
@@ -80,12 +80,12 @@ export default function TrustCenterPage() {
               <Link
                 key={slug}
                 href={`/trust-center/${slug}`}
-                className="flex items-start gap-4 bg-white border border-[#e5e7eb] rounded-xl p-5 hover:shadow-md transition-all hover:-translate-y-0.5 group"
+                className="flex items-start gap-4 bg-white border border-[var(--color-border)] rounded-xl p-5 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
                 <FileText className="w-5 h-5 text-[var(--color-gold)] flex-shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-semibold text-[var(--color-ink)] text-sm mb-1 group-hover:text-[var(--color-gold)] transition-colors">{title}</h3>
-                  <p className="text-xs text-[#6b7280]">{description}</p>
+                  <p className="text-xs text-[var(--color-text-muted)]">{description}</p>
                 </div>
               </Link>
             ))}
@@ -99,12 +99,12 @@ export default function TrustCenterPage() {
           <SectionHeader eyebrow="Common Questions" title="Trust & Compliance FAQ" />
           <div className="space-y-4">
             {faqs.map(({ q, a }) => (
-              <div key={q} className="border border-[#e5e7eb] rounded-xl p-5">
+              <div key={q} className="border border-[var(--color-border)] rounded-xl p-5">
                 <div className="flex items-start gap-3">
                   <MessageCircle className="w-5 h-5 text-[var(--color-gold)] flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-[var(--color-ink)] mb-2">{q}</h3>
-                    <p className="text-sm text-[#6b7280] leading-relaxed">{a}</p>
+                    <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">{a}</p>
                   </div>
                 </div>
               </div>

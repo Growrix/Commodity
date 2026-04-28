@@ -32,35 +32,35 @@ export default function SourcingRequestPage() {
           <form className="space-y-5">
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Name <span className="text-red-500">*</span></label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Name <span className="text-red-500">*</span></label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Company <span className="text-red-500">*</span></label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Company <span className="text-red-500">*</span></label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Email <span className="text-red-500">*</span></label>
-              <input type="email" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Email <span className="text-red-500">*</span></label>
+              <input type="email" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Commodity & Specification <span className="text-red-500">*</span></label>
-              <textarea rows={3} className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. Urea 46% granular, 5,000 MT, port of destination Colombo..." />
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Commodity & Specification <span className="text-red-500">*</span></label>
+              <textarea rows={3} className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. Urea 46% granular, 5,000 MT, port of destination Colombo..." />
             </div>
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Volume Required</label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. 10,000 MT" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Volume Required</label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. 10,000 MT" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Delivery Window</label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. July - August 2026" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Delivery Window</label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. July - August 2026" />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Payment Terms Preference</label>
-              <select className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Payment Terms Preference</label>
+              <select className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
                 <option value="">Select payment preference</option>
                 <option>L/C at sight</option>
                 <option>D/P</option>

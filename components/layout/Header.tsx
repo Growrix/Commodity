@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Globe, ArrowUpRight } from "lucide-react";
 import { clsx } from "clsx";
 
+const HEADER_SCROLL_THRESHOLD = 12;
+
 const navigation = [
   {
     label: "Products",
@@ -55,7 +57,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > HEADER_SCROLL_THRESHOLD);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -64,9 +67,10 @@ export default function Header() {
     <header
       className={clsx(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "bg-[var(--color-ink)]/85 backdrop-blur-xl",
         scrolled
-          ? "bg-[var(--color-ink)]/95 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.06)]"
-          : "bg-transparent"
+          ? "shadow-[0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)] bg-[var(--color-ink)]/95"
+          : "border-b border-white/5"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

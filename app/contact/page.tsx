@@ -58,9 +58,9 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-8 text-center">What Can We Help You With?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {contactPaths.map(({ title, description, href, cta }) => (
-              <div key={title} className="bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-5 text-center">
+              <div key={title} className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-5 text-center">
                 <h3 className="font-bold text-[var(--color-ink)] mb-2">{title}</h3>
-                <p className="text-sm text-[#6b7280] mb-4 leading-relaxed">{description}</p>
+                <p className="text-sm text-[var(--color-text-muted)] mb-4 leading-relaxed">{description}</p>
                 <Button href={href} variant="outline" size="sm">
                   {cta}
                 </Button>
@@ -79,21 +79,21 @@ export default function ContactPage() {
               <form className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">Name <span className="text-red-500">*</span></label>
-                    <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white" />
+                    <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Name <span className="text-red-500">*</span></label>
+                    <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">Company <span className="text-red-500">*</span></label>
-                    <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white" />
+                    <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Company <span className="text-red-500">*</span></label>
+                    <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#374151] mb-1.5">Email <span className="text-red-500">*</span></label>
-                  <input type="email" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white" />
+                  <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Email <span className="text-red-500">*</span></label>
+                  <input type="email" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#374151] mb-1.5">Topic</label>
-                  <select className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
+                  <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Topic</label>
+                  <select className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
                     <option>Trading Inquiry</option>
                     <option>Logistics Question</option>
                     <option>Compliance & Documentation</option>
@@ -103,8 +103,8 @@ export default function ContactPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#374151] mb-1.5">Message <span className="text-red-500">*</span></label>
-                  <textarea rows={4} className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white" placeholder="How can we help?" />
+                  <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Message <span className="text-red-500">*</span></label>
+                  <textarea rows={4} className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white" placeholder="How can we help?" />
                 </div>
                 <Button type="submit" variant="primary">
                   Send Message
@@ -117,13 +117,13 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-6">Regional Offices</h2>
               <div className="space-y-4">
                 {offices.map(({ city, country, role, email, phone, tz }) => (
-                  <div key={city} className="bg-white border border-[#e5e7eb] rounded-xl p-5">
+                  <div key={city} className="bg-white border border-[var(--color-border)] rounded-xl p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <MapPin className="w-4 h-4 text-[var(--color-gold)]" />
                       <h3 className="font-bold text-[var(--color-ink)]">{city}, {country}</h3>
                       <span className="text-xs text-[var(--color-gold)] bg-amber-50 px-2 py-0.5 rounded-full ml-auto">{role}</span>
                     </div>
-                    <div className="space-y-1.5 text-sm text-[#6b7280]">
+                    <div className="space-y-1.5 text-sm text-[var(--color-text-muted)]">
                       <div className="flex items-center gap-2"><Mail className="w-4 h-4 text-[var(--color-ink)]" />{email}</div>
                       <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-[var(--color-ink)]" />{phone}</div>
                       <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--color-ink)]" />{tz}</div>

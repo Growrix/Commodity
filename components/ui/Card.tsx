@@ -39,7 +39,7 @@ export default function Card({
         hover && [
           "transition-all duration-300 cursor-pointer",
           dark
-            ? "hover:border-[var(--color-gold)]/40 hover:bg-[#1a1a1a]"
+            ? "hover:border-[var(--color-gold)]/40 hover:bg-[var(--color-ink-muted)]"
             : "hover:border-[var(--color-gold)]/40 hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1",
         ],
         className

@@ -144,8 +144,8 @@ export default function HomePage() {
             priority
             quality={90}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-[#0a0a0a]/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/80 to-[var(--color-ink)]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/10 to-transparent" />
         </div>
 
         {/* Grid overlay */}
@@ -257,7 +257,7 @@ export default function HomePage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/40 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6">
                     <h3 className="text-white font-bold text-xl mb-2">{title}</h3>
                     <p className="text-white/50 text-sm leading-relaxed mb-4 line-clamp-2">{description}</p>
@@ -359,7 +359,7 @@ export default function HomePage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/50 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-7">
                     <div className="flex items-center gap-2 mb-3">
                       <MapPin className="w-3.5 h-3.5 text-[var(--color-gold)]" />
@@ -386,7 +386,7 @@ export default function HomePage() {
             fill
             className="object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 to-[#0a0a0a]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)]/90 to-[var(--color-ink)]/60" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

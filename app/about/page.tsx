@@ -88,13 +88,13 @@ export default function AboutPage() {
                 title="Structure, Discipline, and Commercial Clarity"
                 align="left"
               />
-              <p className="text-[#6b7280] mb-6 leading-relaxed">
+              <p className="text-[var(--color-text-muted)] mb-6 leading-relaxed">
                 We operate as a principal trading company — sourcing, structuring,
                 and delivering commodity transactions with full operational responsibility.
                 Our clients engage us for consistent supply, compliant documentation,
                 and market insight, not just brokerage.
               </p>
-              <p className="text-[#6b7280] mb-8 leading-relaxed">
+              <p className="text-[var(--color-text-muted)] mb-8 leading-relaxed">
                 Our trading philosophy is built on long-term relationships, transparent
                 pricing structures, and a disciplined approach to counterparty risk
                 and logistics execution.
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-[var(--color-gold)] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-[#374151]">{point}</span>
+                    <span className="text-sm text-[var(--color-text-secondary)]">{point}</span>
                   </div>
                 ))}
               </div>
@@ -120,10 +120,10 @@ export default function AboutPage() {
                 { icon: Users, label: "200+ Team", sub: "Global professionals" },
                 { icon: Scale, label: "Zero Sanctions", sub: "Clean compliance record" },
               ].map(({ icon: Icon, label, sub }) => (
-                <div key={label} className="bg-[var(--color-surface)] rounded-lg p-5 border border-[#e5e7eb]">
+                <div key={label} className="bg-[var(--color-surface)] rounded-lg p-5 border border-[var(--color-border)]">
                   <Icon className="w-6 h-6 text-[var(--color-ink)] mb-2" />
                   <div className="font-bold text-[var(--color-ink)]">{label}</div>
-                  <div className="text-sm text-[#6b7280]">{sub}</div>
+                  <div className="text-sm text-[var(--color-text-muted)]">{sub}</div>
                 </div>
               ))}
             </div>
@@ -140,14 +140,14 @@ export default function AboutPage() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {leadership.map(({ name, role, location }) => (
-              <div key={name} className="bg-white rounded-lg p-6 border border-[#e5e7eb] text-center">
+              <div key={name} className="bg-white rounded-lg p-6 border border-[var(--color-border)] text-center">
                 <div className="w-16 h-16 bg-[var(--color-ink)] rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-white font-bold text-xl">
                     {name.split(" ").map((n) => n[0]).join("")}
                   </span>
                 </div>
                 <h3 className="font-bold text-[var(--color-ink)] mb-1">{name}</h3>
-                <p className="text-sm text-[#6b7280] mb-2">{role}</p>
+                <p className="text-sm text-[var(--color-text-muted)] mb-2">{role}</p>
                 <div className="flex items-center justify-center gap-1 text-xs text-[var(--color-gold)]">
                   <MapPin className="w-3 h-3" />
                   {location}
@@ -172,7 +172,7 @@ export default function AboutPage() {
                   <Globe className="w-6 h-6 text-[var(--color-gold)]" />
                 </div>
                 <h3 className="font-bold text-[var(--color-ink)]">{city}</h3>
-                <p className="text-sm text-[#6b7280]">{country}</p>
+                <p className="text-sm text-[var(--color-text-muted)]">{country}</p>
                 <span className="inline-block mt-1 text-xs font-medium text-[var(--color-gold)] bg-amber-50 px-2 py-0.5 rounded-full">
                   {role}
                 </span>

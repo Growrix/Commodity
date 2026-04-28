@@ -32,27 +32,27 @@ export default function SuppliersPage() {
           <form className="space-y-5">
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Company Name <span className="text-red-500">*</span></label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Company Name <span className="text-red-500">*</span></label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Country of Registration <span className="text-red-500">*</span></label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Country of Registration <span className="text-red-500">*</span></label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Contact Name <span className="text-red-500">*</span></label>
-                <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Contact Name <span className="text-red-500">*</span></label>
+                <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#374151] mb-1.5">Work Email <span className="text-red-500">*</span></label>
-                <input type="email" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
+                <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Work Email <span className="text-red-500">*</span></label>
+                <input type="email" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Commodity Categories <span className="text-red-500">*</span></label>
-              <select className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Commodity Categories <span className="text-red-500">*</span></label>
+              <select className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)] bg-white">
                 <option value="">Select primary commodity category</option>
                 <option>Agriculture</option>
                 <option>Energy & Petroleum Products</option>
@@ -62,12 +62,12 @@ export default function SuppliersPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Annual Supply Capacity</label>
-              <input type="text" className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. 50,000 MT/year" />
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Annual Supply Capacity</label>
+              <input type="text" className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="e.g. 50,000 MT/year" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#374151] mb-1.5">Additional Information</label>
-              <textarea rows={4} className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Certifications, existing customers, production locations, or export experience..." />
+              <label className="block text-sm font-medium text-[var(--color-text-secondary)] mb-1.5">Additional Information</label>
+              <textarea rows={4} className="w-full px-4 py-3 border border-[var(--color-border)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]" placeholder="Certifications, existing customers, production locations, or export experience..." />
             </div>
             <Button type="submit" variant="primary" size="lg">
               Submit Registration

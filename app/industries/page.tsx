@@ -100,7 +100,7 @@ export default function IndustriesPage() {
               <Link
                 key={slug}
                 href={`/industries/${slug}`}
-                className="block bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
+                className="block bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
                 <div className="w-12 h-12 bg-[var(--color-ink)] rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-[var(--color-gold)]" />
@@ -108,12 +108,12 @@ export default function IndustriesPage() {
                 <h3 className="font-bold text-[var(--color-ink)] text-lg mb-2 group-hover:text-[var(--color-gold)] transition-colors">
                   {title}
                 </h3>
-                <p className="text-sm text-[#6b7280] leading-relaxed mb-4">{description}</p>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-4">{description}</p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {commodities.map((c) => (
                     <span
                       key={c}
-                      className="text-xs bg-white border border-[#e5e7eb] text-[#374151] px-2 py-0.5 rounded-full"
+                      className="text-xs bg-white border border-[var(--color-border)] text-[var(--color-text-secondary)] px-2 py-0.5 rounded-full"
                     >
                       {c}
                     </span>

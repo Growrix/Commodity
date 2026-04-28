@@ -81,7 +81,7 @@ export default function MarketsPage() {
               <Link
                 key={slug}
                 href={`/markets/origins/${slug}`}
-                className="block bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
+                className="block bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <MapPin className="w-4 h-4 text-[var(--color-gold)]" />
@@ -89,7 +89,7 @@ export default function MarketsPage() {
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {commodities.map((c) => (
-                    <span key={c} className="text-xs bg-white border border-[#e5e7eb] text-[#374151] px-2 py-0.5 rounded-full">
+                    <span key={c} className="text-xs bg-white border border-[var(--color-border)] text-[var(--color-text-secondary)] px-2 py-0.5 rounded-full">
                       {c}
                     </span>
                   ))}
@@ -113,13 +113,13 @@ export default function MarketsPage() {
               <Link
                 key={slug}
                 href={`/markets/destinations/${slug}`}
-                className="block bg-white border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
+                className="block bg-white border border-[var(--color-border)] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <MapPin className="w-4 h-4 text-[var(--color-ink)]" />
                   <h3 className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-gold)] transition-colors">{name}</h3>
                 </div>
-                <p className="text-sm text-[#6b7280] mb-4">{profile}</p>
+                <p className="text-sm text-[var(--color-text-muted)] mb-4">{profile}</p>
                 <div className="flex items-center gap-1 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)]">
                   View market
                   <ArrowRight className="w-4 h-4" />
