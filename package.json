@@ -1,0 +1,26 @@
+{
+  "name": "commodity-trading-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 5000 -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start -p 5000 -H 0.0.0.0",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.5.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.12.0",
+    "next": "^16.2.4",
+    "postcss": "^8.5.12",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^6.0.3",
+    "@tailwindcss/postcss": "^4.2.4"
+  }
+}
