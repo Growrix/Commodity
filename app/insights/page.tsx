@@ -68,21 +68,21 @@ const topics = ["All", "Market Update", "Trade Intelligence", "Logistics", "Comp
 export default function InsightsPage() {
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-20">
+      <section className="bg-[var(--color-ink)] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Insights" }]} dark />
           <div className="mt-8 max-w-3xl">
-            <span className="text-[#c8a84b] text-xs font-bold uppercase tracking-widest mb-4 block">
+            <span className="text-[var(--color-gold)] text-xs font-bold uppercase tracking-widest mb-4 block">
               Market Intelligence
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
               Commodity Market Insights
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+            <p className="text-xl text-white/60 leading-relaxed mb-8">
               Pricing intelligence, trade flow analysis, and supply chain updates from
               our global trading team — published to support procurement decisions.
             </p>
-            <Button href="/contact" variant="secondary">
+            <Button href="/contact" variant="gold">
               Subscribe for Updates
               <ArrowRight className="w-4 h-4" />
             </Button>
@@ -91,7 +91,7 @@ export default function InsightsPage() {
       </section>
 
       {/* Topic Filters */}
-      <section className="bg-[#f8f9fa] border-b border-[#e5e7eb] py-4">
+      <section className="bg-[var(--color-surface)] border-b border-[#e5e7eb] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2">
             {topics.map((topic, i) => (
@@ -99,8 +99,8 @@ export default function InsightsPage() {
                 key={topic}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                   i === 0
-                    ? "bg-[#0f2040] text-white"
-                    : "bg-white border border-[#e5e7eb] text-[#374151] hover:border-[#0f2040] hover:text-[#0f2040]"
+                    ? "bg-[var(--color-ink)] text-white"
+                    : "bg-white border border-[#e5e7eb] text-[#374151] hover:border-[var(--color-ink)] hover:text-[var(--color-ink)]"
                 }`}
               >
                 {topic}
@@ -122,19 +122,19 @@ export default function InsightsPage() {
               <Link
                 key={slug}
                 href={`/insights/${slug}`}
-                className="group block bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5"
+                className="group block bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-bold uppercase tracking-wide text-[#c8a84b]">{category}</span>
+                  <span className="text-xs font-bold uppercase tracking-wide text-[var(--color-gold)]">{category}</span>
                   <span className="text-xs text-[#6b7280]">· {date}</span>
                 </div>
-                <h3 className="font-bold text-[#0f2040] text-base mb-2 leading-snug group-hover:text-[#c8a84b] transition-colors">
+                <h3 className="font-bold text-[var(--color-ink)] text-base mb-2 leading-snug group-hover:text-[var(--color-gold)] transition-colors">
                   {title}
                 </h3>
                 <p className="text-sm text-[#6b7280] leading-relaxed mb-4">{excerpt}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#6b7280]">{readTime}</span>
-                  <div className="flex items-center gap-1 text-sm font-medium text-[#0f2040] group-hover:text-[#c8a84b]">
+                  <div className="flex items-center gap-1 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)]">
                     Read
                     <ArrowRight className="w-4 h-4" />
                   </div>
@@ -146,10 +146,10 @@ export default function InsightsPage() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 bg-[#f8f9fa]">
+      <section className="py-16 bg-[var(--color-surface)]">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <BookOpen className="w-10 h-10 text-[#0f2040] mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-[#0f2040] mb-3">Stay Ahead of the Market</h2>
+          <BookOpen className="w-10 h-10 text-[var(--color-ink)] mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-3">Stay Ahead of the Market</h2>
           <p className="text-[#6b7280] mb-6">
             Subscribe for weekly commodity market updates, pricing signals, and trade intelligence.
           </p>
@@ -157,7 +157,7 @@ export default function InsightsPage() {
             <input
               type="email"
               placeholder="Your work email"
-              className="flex-1 px-4 py-3 border border-[#e5e7eb] rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#0f2040]"
+              className="flex-1 px-4 py-3 border border-[#e5e7eb] rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-ink)]"
             />
             <Button href="/contact" variant="primary">Subscribe</Button>
           </div>

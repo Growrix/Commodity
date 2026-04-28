@@ -5,14 +5,16 @@ interface CardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
-  padding?: "sm" | "md" | "lg" | "none";
+  padding?: "none" | "sm" | "md" | "lg";
+  dark?: boolean;
+  bordered?: boolean;
 }
 
 const paddingStyles = {
   none: "",
-  sm: "p-4",
-  md: "p-6",
-  lg: "p-8",
+  sm:   "p-4",
+  md:   "p-6",
+  lg:   "p-8",
 };
 
 export default function Card({
@@ -20,14 +22,26 @@ export default function Card({
   className,
   hover = false,
   padding = "md",
+  dark = false,
+  bordered = true,
 }: CardProps) {
   return (
     <div
       className={clsx(
-        "bg-white rounded-lg border border-[#e5e7eb]",
+        "rounded-[var(--radius-lg)]",
         paddingStyles[padding],
-        hover &&
-          "transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 cursor-pointer",
+        dark
+          ? "bg-[var(--color-ink-soft)] text-white"
+          : "bg-white text-[var(--color-text-primary)]",
+        bordered && (dark
+          ? "border border-white/8"
+          : "border border-[var(--color-border)]"),
+        hover && [
+          "transition-all duration-300 cursor-pointer",
+          dark
+            ? "hover:border-[var(--color-gold)]/40 hover:bg-[#1a1a1a]"
+            : "hover:border-[var(--color-gold)]/40 hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1",
+        ],
         className
       )}
     >

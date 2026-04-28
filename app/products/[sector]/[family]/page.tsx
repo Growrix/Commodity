@@ -38,7 +38,7 @@ export default async function FamilyPage({
 
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-20">
+      <section className="bg-[var(--color-ink)] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb
             items={[
@@ -49,20 +49,20 @@ export default async function FamilyPage({
             dark
           />
           <div className="mt-8 max-w-3xl">
-            <span className="text-[#c8a84b] text-xs font-bold uppercase tracking-widest mb-4 block">
+            <span className="text-[var(--color-gold)] text-xs font-bold uppercase tracking-widest mb-4 block">
               {sectorTitle}
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">{familyTitle}</h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+            <p className="text-xl text-white/60 leading-relaxed mb-8">
               We source and trade {familyTitle} with full documentation, quality
               inspection, and logistics support from major origin markets.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button href="/partner-with-us/buyers" variant="secondary">
+              <Button href="/partner-with-us/buyers" variant="gold">
                 Request a Quote
                 <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button href="/contact" variant="outline">
+              <Button href="/contact" variant="outline-white">
                 Discuss Requirements
               </Button>
             </div>
@@ -76,10 +76,10 @@ export default async function FamilyPage({
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-[#0f2040] mb-4">Specifications & Grades</h2>
-                <div className="bg-[#f8f9fa] rounded-xl border border-[#e5e7eb] overflow-hidden">
+                <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-4">Specifications & Grades</h2>
+                <div className="bg-[var(--color-surface)] rounded-xl border border-[#e5e7eb] overflow-hidden">
                   <table className="w-full text-sm">
-                    <thead className="bg-[#0f2040] text-white">
+                    <thead className="bg-[var(--color-ink)] text-white">
                       <tr>
                         <th className="text-left px-4 py-3">Parameter</th>
                         <th className="text-left px-4 py-3">Typical Range</th>
@@ -106,7 +106,7 @@ export default async function FamilyPage({
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-[#0f2040] mb-4">Trade Documentation</h2>
+                <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-4">Trade Documentation</h2>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
                     "Bill of Lading",
@@ -117,7 +117,7 @@ export default async function FamilyPage({
                     "Packing List & Weight Certificate",
                   ].map((doc) => (
                     <div key={doc} className="flex items-center gap-2 text-sm text-[#374151]">
-                      <FileText className="w-4 h-4 text-[#c8a84b]" />
+                      <FileText className="w-4 h-4 text-[var(--color-gold)]" />
                       {doc}
                     </div>
                   ))}
@@ -127,18 +127,18 @@ export default async function FamilyPage({
 
             {/* Sidebar */}
             <div className="space-y-4">
-              <div className="bg-[#0f2040] rounded-xl p-6 text-white">
+              <div className="bg-[var(--color-ink)] rounded-xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-4">Quick Inquiry</h3>
-                <p className="text-gray-300 text-sm mb-4">
+                <p className="text-white/60 text-sm mb-4">
                   Tell us your requirements and we will respond within one business day.
                 </p>
-                <Button href="/partner-with-us/buyers" variant="secondary" fullWidth>
+                <Button href="/partner-with-us/buyers" variant="gold" fullWidth>
                   Request a Quote
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
-              <div className="bg-[#f8f9fa] rounded-xl p-6 border border-[#e5e7eb]">
-                <h3 className="font-bold text-[#0f2040] mb-4">Why Source With Us</h3>
+              <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[#e5e7eb]">
+                <h3 className="font-bold text-[var(--color-ink)] mb-4">Why Source With Us</h3>
                 <div className="space-y-3">
                   {[
                     { icon: CheckCircle, text: "Verified supplier network" },
@@ -147,7 +147,7 @@ export default async function FamilyPage({
                     { icon: FileText, text: "Compliant documentation" },
                   ].map(({ icon: Icon, text }) => (
                     <div key={text} className="flex items-center gap-2 text-sm text-[#374151]">
-                      <Icon className="w-4 h-4 text-[#c8a84b]" />
+                      <Icon className="w-4 h-4 text-[var(--color-gold)]" />
                       {text}
                     </div>
                   ))}

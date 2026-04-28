@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Package, Factory, Handshake } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Package, Factory, Handshake } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import Breadcrumb from "@/components/layout/Breadcrumb";
-import SectionHeader from "@/components/sections/SectionHeader";
-import Button from "@/components/ui/Button";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Partner With Us",
@@ -15,92 +15,133 @@ const paths = [
   {
     icon: Package,
     slug: "buyers",
+    tag: "Source Commodities",
     title: "For Buyers",
-    subtitle: "Source Commodities",
     description:
       "You need consistent, competitively priced commodity supply with compliant documentation and reliable logistics. We are your counterpart.",
     cta: "Request a Quote",
-    color: "border-blue-200 bg-blue-50",
-    iconBg: "bg-[#0f2040]",
+    accent: true,
   },
   {
     icon: Factory,
     slug: "suppliers",
+    tag: "Join Our Network",
     title: "For Suppliers",
-    subtitle: "Join Our Network",
     description:
       "You produce or hold commodity stock and need access to international buyers. Register as a verified supplier and connect with our global trading desk.",
     cta: "Register as Supplier",
-    color: "border-green-200 bg-green-50",
-    iconBg: "bg-green-700",
+    accent: false,
   },
   {
     icon: Handshake,
     slug: "partners",
+    tag: "Strategic Partnership",
     title: "For Partners",
-    subtitle: "Strategic Partnership",
     description:
       "You are exploring a structured commercial collaboration, joint venture, or long-term program. Initiate a strategic partnership conversation.",
     cta: "Explore Partnership",
-    color: "border-amber-200 bg-amber-50",
-    iconBg: "bg-amber-700",
+    accent: false,
   },
 ];
 
 export default function PartnerWithUsPage() {
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero */}
+      <section className="relative bg-[var(--color-ink)] text-white py-28 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2400&q=80"
+            alt="Business partnership and trading"
+            fill
+            className="object-cover object-center opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/80 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Partner With Us" }]} dark />
-          <div className="mt-8 max-w-3xl">
-            <span className="text-[#c8a84b] text-xs font-bold uppercase tracking-widest mb-4 block">Work With Us</span>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+          <div className="mt-10 max-w-2xl animate-fade-up">
+            <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-4 block">
+              Work With Us
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-[1.08] tracking-tight">
               The Right Commercial Path for Your Intent
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Whether you source, supply, or seek to collaborate — we have structured
-              onboarding paths for each commercial relationship.
+            <p className="text-lg text-white/55 leading-relaxed">
+              Whether you source, supply, or seek to collaborate — we have structured onboarding paths for each commercial relationship.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* Paths */}
+      <section className="py-24 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Choose Your Path"
-            title="How Would You Like to Engage?"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {paths.map(({ icon: Icon, slug, title, subtitle, description, cta, color, iconBg }) => (
-              <div key={slug} className={`rounded-2xl border-2 p-8 ${color} flex flex-col`}>
-                <div className={`w-14 h-14 ${iconBg} rounded-xl flex items-center justify-center mb-5`}>
-                  <Icon className="w-7 h-7 text-white" />
+          <AnimatedSection className="text-center mb-14">
+            <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
+              Choose Your Path
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-bold text-[var(--color-ink)] leading-[1.1] tracking-tight">
+              How Would You Like to Engage?
+            </h2>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {paths.map(({ icon: Icon, slug, tag, title, description, cta, accent }, i) => (
+              <AnimatedSection key={slug} delay={i * 80}>
+                <div
+                  className={`relative rounded-[var(--radius-xl)] p-8 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 ${
+                    accent
+                      ? "bg-[var(--color-gold)] text-[var(--color-ink)]"
+                      : "bg-[var(--color-ink)] text-white border border-white/0 hover:border-[var(--color-gold)]/20"
+                  }`}
+                >
+                  <div
+                    className={`w-12 h-12 rounded-[var(--radius-sm)] flex items-center justify-center mb-6 ${
+                      accent ? "bg-[var(--color-ink)]/15" : "bg-[var(--color-gold)]/15 border border-[var(--color-gold)]/20"
+                    }`}
+                  >
+                    <Icon className={`w-6 h-6 ${accent ? "text-[var(--color-ink)]" : "text-[var(--color-gold)]"}`} />
+                  </div>
+                  <span className={`text-[10px] font-bold uppercase tracking-widest mb-3 ${accent ? "text-[var(--color-ink)]/60" : "text-[var(--color-gold)]"}`}>
+                    {tag}
+                  </span>
+                  <h2 className={`text-2xl font-bold mb-3 leading-snug ${accent ? "text-[var(--color-ink)]" : "text-white"}`}>
+                    {title}
+                  </h2>
+                  <p className={`text-sm leading-relaxed mb-8 flex-1 ${accent ? "text-[var(--color-ink)]/65" : "text-white/45"}`}>
+                    {description}
+                  </p>
+                  <Link
+                    href={`/partner-with-us/${slug}`}
+                    className={`inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group/cta ${
+                      accent ? "text-[var(--color-ink)]" : "text-[var(--color-gold)] hover:text-[var(--color-gold-light)]"
+                    }`}
+                  >
+                    {cta}
+                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
+                  </Link>
                 </div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#6b7280] mb-1">{subtitle}</span>
-                <h2 className="text-2xl font-bold text-[#0f2040] mb-3">{title}</h2>
-                <p className="text-sm text-[#6b7280] leading-relaxed mb-6 flex-1">{description}</p>
-                <Button href={`/partner-with-us/${slug}`} variant="primary">
-                  {cta}
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-[#f8f9fa]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-[#0f2040] mb-3">Not sure which path is right?</h2>
-          <p className="text-[#6b7280] mb-6">
+      {/* General enquiry */}
+      <section className="py-16 bg-[var(--color-surface-off)] border-t border-[var(--color-border)]">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-3">Not sure which path is right?</h2>
+          <p className="text-[var(--color-text-muted)] mb-6">
             Send us a general enquiry and our team will route you to the right commercial contact.
           </p>
-          <Button href="/contact" variant="outline">
-            Contact Us
-            <ArrowRight className="w-4 h-4" />
-          </Button>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-[var(--color-ink)] text-white font-medium px-6 py-3 rounded hover:bg-[var(--color-ink-muted)] transition-all duration-200"
+          >
+            Contact Us <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </PageLayout>

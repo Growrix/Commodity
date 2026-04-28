@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CheckCircle, Globe, Users, Award, Scale } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import CTABand from "@/components/sections/CTABand";
 import SectionHeader from "@/components/sections/SectionHeader";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
 import { ArrowRight, MapPin } from "lucide-react";
 
@@ -40,31 +42,36 @@ export default function AboutPage() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="bg-[#0f2040] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb
-            items={[{ label: "About Us" }]}
-            dark
+      <section className="relative bg-[var(--color-ink)] text-white py-28 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80"
+            alt="Global trading headquarters"
+            fill
+            className="object-cover object-center opacity-20"
+            priority
           />
-          <div className="mt-8 max-w-3xl">
-            <span className="text-[#c8a84b] text-xs font-bold uppercase tracking-widest mb-4 block">
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/80 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: "About Us" }]} dark />
+          <div className="mt-10 max-w-2xl animate-fade-up">
+            <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-4 block">
               Our Company
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-[1.08] tracking-tight">
               A Trusted Partner in Global Commodity Trade
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
-              Since 2004, GlobalTrade Commodities has built structured trading
-              operations across Agriculture, Energy, Fertilizers, and Industrial
-              Materials — connecting supply with demand across more than 60 countries.
+            <p className="text-lg text-white/55 leading-relaxed mb-10">
+              Since 2004, GlobalTrade Commodities has built structured trading operations across Agriculture, Energy, Fertilizers, and Industrial Materials — connecting supply with demand across more than 60 countries.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button href="/contact" variant="secondary">
+              <Button href="/contact" variant="gold">
                 Speak With Our Team
                 <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button href="/trust-center" variant="outline">
-                Download Company Profile
+              <Button href="/trust-center" variant="outline-white">
+                Company Profile
               </Button>
             </div>
           </div>
@@ -100,7 +107,7 @@ export default function AboutPage() {
                   "Third-party quality inspection at all stages",
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-[#c8a84b] flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-[var(--color-gold)] flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-[#374151]">{point}</span>
                   </div>
                 ))}
@@ -113,9 +120,9 @@ export default function AboutPage() {
                 { icon: Users, label: "200+ Team", sub: "Global professionals" },
                 { icon: Scale, label: "Zero Sanctions", sub: "Clean compliance record" },
               ].map(({ icon: Icon, label, sub }) => (
-                <div key={label} className="bg-[#f8f9fa] rounded-lg p-5 border border-[#e5e7eb]">
-                  <Icon className="w-6 h-6 text-[#0f2040] mb-2" />
-                  <div className="font-bold text-[#0f2040]">{label}</div>
+                <div key={label} className="bg-[var(--color-surface)] rounded-lg p-5 border border-[#e5e7eb]">
+                  <Icon className="w-6 h-6 text-[var(--color-ink)] mb-2" />
+                  <div className="font-bold text-[var(--color-ink)]">{label}</div>
                   <div className="text-sm text-[#6b7280]">{sub}</div>
                 </div>
               ))}
@@ -125,7 +132,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="py-20 bg-[#f8f9fa]">
+      <section className="py-20 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Leadership"
@@ -134,14 +141,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {leadership.map(({ name, role, location }) => (
               <div key={name} className="bg-white rounded-lg p-6 border border-[#e5e7eb] text-center">
-                <div className="w-16 h-16 bg-[#0f2040] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <div className="w-16 h-16 bg-[var(--color-ink)] rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-white font-bold text-xl">
                     {name.split(" ").map((n) => n[0]).join("")}
                   </span>
                 </div>
-                <h3 className="font-bold text-[#0f2040] mb-1">{name}</h3>
+                <h3 className="font-bold text-[var(--color-ink)] mb-1">{name}</h3>
                 <p className="text-sm text-[#6b7280] mb-2">{role}</p>
-                <div className="flex items-center justify-center gap-1 text-xs text-[#c8a84b]">
+                <div className="flex items-center justify-center gap-1 text-xs text-[var(--color-gold)]">
                   <MapPin className="w-3 h-3" />
                   {location}
                 </div>
@@ -161,12 +168,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {offices.map(({ city, country, role }) => (
               <div key={city} className="text-center">
-                <div className="w-12 h-12 bg-[#0f2040] rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <Globe className="w-6 h-6 text-[#c8a84b]" />
+                <div className="w-12 h-12 bg-[var(--color-ink)] rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <Globe className="w-6 h-6 text-[var(--color-gold)]" />
                 </div>
-                <h3 className="font-bold text-[#0f2040]">{city}</h3>
+                <h3 className="font-bold text-[var(--color-ink)]">{city}</h3>
                 <p className="text-sm text-[#6b7280]">{country}</p>
-                <span className="inline-block mt-1 text-xs font-medium text-[#c8a84b] bg-amber-50 px-2 py-0.5 rounded-full">
+                <span className="inline-block mt-1 text-xs font-medium text-[var(--color-gold)] bg-amber-50 px-2 py-0.5 rounded-full">
                   {role}
                 </span>
               </div>
@@ -176,7 +183,7 @@ export default function AboutPage() {
       </section>
 
       {/* Milestones */}
-      <section className="py-20 bg-[#0f2040]">
+      <section className="py-20 bg-[var(--color-ink)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Journey"
@@ -188,14 +195,14 @@ export default function AboutPage() {
             <div className="space-y-6">
               {milestones.map(({ year, event }) => (
                 <div key={year} className="flex gap-6 items-start md:pl-12 relative">
-                  <div className="hidden md:flex absolute left-0 w-8 h-8 bg-[#c8a84b] rounded-full items-center justify-center flex-shrink-0">
+                  <div className="hidden md:flex absolute left-0 w-8 h-8 bg-[var(--color-gold)] rounded-full items-center justify-center flex-shrink-0">
                     <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
-                  <div className="bg-white/5 border border-white/10 rounded-lg px-5 py-4 flex items-center gap-4 flex-1">
-                    <span className="text-[#c8a84b] font-bold text-lg w-12 flex-shrink-0">
+                  <div className="bg-white/4 border border-white/10 rounded-lg px-5 py-4 flex items-center gap-4 flex-1">
+                    <span className="text-[var(--color-gold)] font-bold text-lg w-12 flex-shrink-0">
                       {year}
                     </span>
-                    <span className="text-gray-200 text-sm">{event}</span>
+                    <span className="text-white/55 text-sm">{event}</span>
                   </div>
                 </div>
               ))}

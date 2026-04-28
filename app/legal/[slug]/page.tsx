@@ -16,12 +16,12 @@ export default async function LegalPage({ params }: { params: Promise<{ slug: st
 
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-16">
+      <section className="bg-[var(--color-ink)] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Legal" }, { label: title }]} dark />
           <div className="mt-8">
             <h1 className="text-4xl font-bold mb-3">{title}</h1>
-            <p className="text-gray-300">Last updated: April 2026</p>
+            <p className="text-white/60">Last updated: April 2026</p>
           </div>
         </div>
       </section>
@@ -33,19 +33,19 @@ export default async function LegalPage({ params }: { params: Promise<{ slug: st
               This {title} governs your use of the GlobalTrade Commodities website
               and related services. Please read it carefully.
             </p>
-            <h2 className="text-xl font-bold text-[#0f2040] mt-8 mb-4">Overview</h2>
+            <h2 className="text-xl font-bold text-[var(--color-ink)] mt-8 mb-4">Overview</h2>
             <p className="text-[#6b7280] leading-relaxed mb-6">
               GlobalTrade Commodities Ltd ("the Company") is committed to responsible
               data practices, transparent commercial conduct, and compliance with
               applicable law in all jurisdictions where we operate.
             </p>
-            <h2 className="text-xl font-bold text-[#0f2040] mt-8 mb-4">Contact</h2>
+            <h2 className="text-xl font-bold text-[var(--color-ink)] mt-8 mb-4">Contact</h2>
             <p className="text-[#6b7280] leading-relaxed mb-8">
               If you have questions about this {title}, please contact{" "}
-              <span className="text-[#0f2040] font-medium">legal@globaltrade.com</span>
+              <span className="text-[var(--color-ink)] font-medium">legal@globaltrade.com</span>
             </p>
           </div>
-          <Button href="/trust-center" variant="outline">
+          <Button href="/trust-center" variant="outline-white">
             Trust Center
             <ArrowRight className="w-4 h-4" />
           </Button>

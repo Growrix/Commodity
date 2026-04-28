@@ -1,6 +1,7 @@
 interface Stat {
   value: string;
   label: string;
+  detail?: string;
 }
 
 interface StatStripProps {
@@ -10,27 +11,29 @@ interface StatStripProps {
 
 export default function StatStrip({ stats, dark = false }: StatStripProps) {
   return (
-    <div
-      className={`grid grid-cols-2 sm:grid-cols-4 gap-6 ${
-        dark ? "text-white" : "text-[#0f2040]"
-      }`}
-    >
-      {stats.map(({ value, label }) => (
-        <div key={label} className="text-center">
+    <div className={`grid grid-cols-2 sm:grid-cols-4 gap-px ${dark ? "border-white/10" : "border-[var(--color-border)]"}`}>
+      {stats.map(({ value, label, detail }, i) => (
+        <div
+          key={label}
+          className={`text-center py-8 px-4 ${
+            i !== stats.length - 1 ? (dark ? "border-r border-white/8 last:border-r-0" : "border-r border-[var(--color-border)] last:border-r-0") : ""
+          }`}
+        >
           <div
-            className={`text-3xl sm:text-4xl font-bold mb-1 ${
-              dark ? "text-[#c8a84b]" : "text-[#0f2040]"
+            className={`text-4xl sm:text-5xl font-bold tracking-tight mb-1.5 ${
+              dark ? "text-[var(--color-gold)]" : "text-[var(--color-ink)]"
             }`}
           >
             {value}
           </div>
-          <div
-            className={`text-sm ${
-              dark ? "text-gray-300" : "text-[#6b7280]"
-            }`}
-          >
+          <div className={`text-sm font-medium ${dark ? "text-white" : "text-[var(--color-ink)]"}`}>
             {label}
           </div>
+          {detail && (
+            <div className={`text-xs mt-1 ${dark ? "text-white/35" : "text-[var(--color-text-muted)]"}`}>
+              {detail}
+            </div>
+          )}
         </div>
       ))}
     </div>

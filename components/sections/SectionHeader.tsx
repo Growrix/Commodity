@@ -7,6 +7,7 @@ interface SectionHeaderProps {
   align?: "left" | "center";
   dark?: boolean;
   className?: string;
+  titleClassName?: string;
 }
 
 export default function SectionHeader({
@@ -16,29 +17,27 @@ export default function SectionHeader({
   align = "center",
   dark = false,
   className,
+  titleClassName,
 }: SectionHeaderProps) {
   return (
     <div
       className={clsx(
-        "mb-12",
+        "mb-14",
         align === "center" && "text-center",
         className
       )}
     >
       {eyebrow && (
-        <span
-          className={clsx(
-            "inline-block text-xs font-bold uppercase tracking-widest mb-3",
-            dark ? "text-[#c8a84b]" : "text-[#c8a84b]"
-          )}
-        >
+        <span className="inline-block text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3">
           {eyebrow}
         </span>
       )}
       <h2
         className={clsx(
-          "text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight",
-          dark ? "text-white" : "text-[#0f2040]"
+          "font-bold leading-[1.12] tracking-tight",
+          "text-3xl sm:text-4xl lg:text-[2.8rem]",
+          dark ? "text-white" : "text-[var(--color-ink)]",
+          titleClassName
         )}
       >
         {title}
@@ -46,9 +45,9 @@ export default function SectionHeader({
       {description && (
         <p
           className={clsx(
-            "mt-4 text-base sm:text-lg max-w-2xl leading-relaxed",
+            "mt-4 text-base sm:text-lg leading-relaxed max-w-2xl",
             align === "center" && "mx-auto",
-            dark ? "text-gray-300" : "text-[#6b7280]"
+            dark ? "text-white/50" : "text-[var(--color-text-muted)]"
           )}
         >
           {description}

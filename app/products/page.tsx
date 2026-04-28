@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Wheat, Fuel, FlaskConical, Factory, ArrowRight, Package } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import CTABand from "@/components/sections/CTABand";
 import SectionHeader from "@/components/sections/SectionHeader";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
@@ -60,26 +62,34 @@ export default function ProductsPage() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="bg-[#0f2040] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[var(--color-ink)] text-white py-28 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1518977822534-7049a61ee0c2?auto=format&fit=crop&w=2400&q=80"
+            alt="Commodity products and agriculture"
+            fill
+            className="object-cover object-center opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/80 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Products" }]} dark />
-          <div className="mt-8 max-w-3xl">
-            <span className="text-[#c8a84b] text-xs font-bold uppercase tracking-widest mb-4 block">
+          <div className="mt-10 max-w-2xl animate-fade-up">
+            <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-4 block">
               Product Catalog
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-[1.08] tracking-tight">
               A Full-Spectrum Commodity Catalog
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
-              Four core sectors. Hundreds of product families. One trusted counterpart
-              for sourcing, logistics, and documentation.
+            <p className="text-lg text-white/55 leading-relaxed mb-10">
+              Four core sectors. Hundreds of product families. One trusted counterpart for sourcing, logistics, and documentation.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button href="/partner-with-us/buyers" variant="secondary">
-                Request a Quote
-                <ArrowRight className="w-4 h-4" />
+              <Button href="/partner-with-us/buyers" variant="gold">
+                Request a Quote <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button href="/partner-with-us" variant="outline">
+              <Button href="/partner-with-us" variant="outline-white">
                 Browse by Need
               </Button>
             </div>
@@ -88,13 +98,13 @@ export default function ProductsPage() {
       </section>
 
       {/* How to Evaluate */}
-      <section className="py-12 bg-[#f8f9fa] border-b border-[#e5e7eb]">
+      <section className="py-12 bg-[var(--color-surface)] border-b border-[#e5e7eb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
             {["Grade & Specification", "Origin Country", "Packaging Format", "Application", "Logistics Mode"].map((label) => (
               <div key={label}>
-                <div className="w-8 h-8 bg-[#0f2040] rounded mx-auto mb-2 flex items-center justify-center">
-                  <Package className="w-4 h-4 text-[#c8a84b]" />
+                <div className="w-8 h-8 bg-[var(--color-ink)] rounded mx-auto mb-2 flex items-center justify-center">
+                  <Package className="w-4 h-4 text-[var(--color-gold)]" />
                 </div>
                 <span className="text-xs font-semibold text-[#374151]">{label}</span>
               </div>
@@ -121,7 +131,7 @@ export default function ProductsPage() {
                   <Icon className="w-7 h-7" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-xl font-bold text-[#0f2040] mb-2 group-hover:text-[#c8a84b] transition-colors">
+                  <h2 className="text-xl font-bold text-[var(--color-ink)] mb-2 group-hover:text-[var(--color-gold)] transition-colors">
                     {title}
                   </h2>
                   <p className="text-sm text-[#6b7280] mb-4 max-w-xl leading-relaxed">{description}</p>
@@ -137,7 +147,7 @@ export default function ProductsPage() {
                   </div>
                 </div>
                 <div className="flex items-center sm:items-start">
-                  <div className="flex items-center gap-1 text-sm font-semibold text-[#0f2040] group-hover:text-[#c8a84b] transition-colors whitespace-nowrap mt-1">
+                  <div className="flex items-center gap-1 text-sm font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-gold)] transition-colors whitespace-nowrap mt-1">
                     Browse sector
                     <ArrowRight className="w-4 h-4" />
                   </div>

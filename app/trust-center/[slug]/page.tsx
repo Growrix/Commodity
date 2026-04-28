@@ -16,12 +16,12 @@ export default async function TrustDocumentPage({ params }: { params: Promise<{ 
 
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-16">
+      <section className="bg-[var(--color-ink)] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Trust Center", href: "/trust-center" }, { label: title }]} dark />
           <div className="mt-8 max-w-3xl">
             <h1 className="text-4xl font-bold mb-4">{title}</h1>
-            <p className="text-gray-300">Last updated: April 2026</p>
+            <p className="text-white/60">Last updated: April 2026</p>
           </div>
         </div>
       </section>
@@ -34,25 +34,25 @@ export default async function TrustDocumentPage({ params }: { params: Promise<{ 
               regarding {title.toLowerCase()}. It applies to all personnel, agents,
               and third parties acting on behalf of the company.
             </p>
-            <h2 className="text-xl font-bold text-[#0f2040] mt-8 mb-4">Scope</h2>
+            <h2 className="text-xl font-bold text-[var(--color-ink)] mt-8 mb-4">Scope</h2>
             <p className="text-[#6b7280] leading-relaxed mb-6">
               This policy applies globally across all operations, jurisdictions, and
               commercial relationships in which GlobalTrade Commodities participates
               or has oversight.
             </p>
-            <h2 className="text-xl font-bold text-[#0f2040] mt-8 mb-4">Policy Statement</h2>
+            <h2 className="text-xl font-bold text-[var(--color-ink)] mt-8 mb-4">Policy Statement</h2>
             <p className="text-[#6b7280] leading-relaxed mb-6">
               GlobalTrade Commodities is committed to the highest standards of
               commercial conduct, regulatory compliance, and ethical behaviour. This
               commitment extends to all our trading relationships and counterparties.
             </p>
-            <h2 className="text-xl font-bold text-[#0f2040] mt-8 mb-4">Contact</h2>
+            <h2 className="text-xl font-bold text-[var(--color-ink)] mt-8 mb-4">Contact</h2>
             <p className="text-[#6b7280] leading-relaxed mb-8">
               For questions about this document, please contact our compliance team at{" "}
-              <span className="text-[#0f2040] font-medium">compliance@globaltrade.com</span>
+              <span className="text-[var(--color-ink)] font-medium">compliance@globaltrade.com</span>
             </p>
           </div>
-          <Button href="/trust-center" variant="outline">
+          <Button href="/trust-center" variant="outline-white">
             Back to Trust Center
             <ArrowRight className="w-4 h-4" />
           </Button>

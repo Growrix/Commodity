@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
@@ -41,23 +42,31 @@ const corridors = [
 export default function MarketsPage() {
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[var(--color-ink)] text-white py-28 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=2400&q=80"
+            alt="World trade and markets"
+            fill
+            className="object-cover object-center opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/80 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Markets" }]} dark />
-          <div className="mt-8 max-w-3xl">
-            <span className="text-[#c8a84b] text-xs font-bold uppercase tracking-widest mb-4 block">
+          <div className="mt-10 max-w-2xl animate-fade-up">
+            <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-4 block">
               Global Reach
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-[1.08] tracking-tight">
               Markets, Origins, and Trade Corridors
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
-              We operate in the world's most active commodity corridors — connecting
-              supply from origin markets with demand from buying destinations across 60+ countries.
+            <p className="text-lg text-white/55 leading-relaxed mb-10">
+              We operate in the world's most active commodity corridors — connecting supply from origin markets with demand across 60+ countries.
             </p>
-            <Button href="/contact" variant="secondary">
-              Explore Trade Corridors
-              <ArrowRight className="w-4 h-4" />
+            <Button href="/contact" variant="gold">
+              Explore Trade Corridors <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
@@ -72,11 +81,11 @@ export default function MarketsPage() {
               <Link
                 key={slug}
                 href={`/markets/origins/${slug}`}
-                className="block bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
+                className="block bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <MapPin className="w-4 h-4 text-[#c8a84b]" />
-                  <h3 className="font-bold text-[#0f2040] group-hover:text-[#c8a84b] transition-colors">{name}</h3>
+                  <MapPin className="w-4 h-4 text-[var(--color-gold)]" />
+                  <h3 className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-gold)] transition-colors">{name}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {commodities.map((c) => (
@@ -85,7 +94,7 @@ export default function MarketsPage() {
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center gap-1 text-sm font-medium text-[#0f2040] group-hover:text-[#c8a84b]">
+                <div className="flex items-center gap-1 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)]">
                   View origin
                   <ArrowRight className="w-4 h-4" />
                 </div>
@@ -96,7 +105,7 @@ export default function MarketsPage() {
       </section>
 
       {/* Destinations */}
-      <section className="py-20 bg-[#f8f9fa]">
+      <section className="py-20 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Where We Deliver" title="Destination Markets" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -107,11 +116,11 @@ export default function MarketsPage() {
                 className="block bg-white border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <MapPin className="w-4 h-4 text-[#0f2040]" />
-                  <h3 className="font-bold text-[#0f2040] group-hover:text-[#c8a84b] transition-colors">{name}</h3>
+                  <MapPin className="w-4 h-4 text-[var(--color-ink)]" />
+                  <h3 className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-gold)] transition-colors">{name}</h3>
                 </div>
                 <p className="text-sm text-[#6b7280] mb-4">{profile}</p>
-                <div className="flex items-center gap-1 text-sm font-medium text-[#0f2040] group-hover:text-[#c8a84b]">
+                <div className="flex items-center gap-1 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)]">
                   View market
                   <ArrowRight className="w-4 h-4" />
                 </div>
@@ -122,7 +131,7 @@ export default function MarketsPage() {
       </section>
 
       {/* Corridors */}
-      <section className="py-20 bg-[#0f2040]">
+      <section className="py-20 bg-[var(--color-ink)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Trade Routes" title="Key Corridors" dark />
           <div className="space-y-4">
@@ -130,22 +139,22 @@ export default function MarketsPage() {
               <Link
                 key={slug}
                 href={`/markets/corridors/${slug}`}
-                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors group"
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white/4 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors group"
               >
                 <div className="flex items-center gap-3 flex-1">
                   <span className="font-semibold text-white">{from}</span>
-                  <ArrowRight className="w-4 h-4 text-[#c8a84b] flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-[var(--color-gold)] flex-shrink-0" />
                   <span className="font-semibold text-white">{to}</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {commodities.map((c) => (
-                    <span key={c} className="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full">{c}</span>
+                    <span key={c} className="text-xs bg-white/10 text-white/55 px-2 py-0.5 rounded-full">{c}</span>
                   ))}
                 </div>
                 <span className={`text-xs font-semibold px-2 py-1 rounded-full ${volume === "Very High" ? "bg-green-500/20 text-green-300" : "bg-amber-500/20 text-amber-300"}`}>
                   {volume} Volume
                 </span>
-                <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#c8a84b] transition-colors hidden sm:block" />
+                <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[var(--color-gold)] transition-colors hidden sm:block" />
               </Link>
             ))}
           </div>

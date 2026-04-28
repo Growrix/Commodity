@@ -1,60 +1,85 @@
-import Button from "@/components/ui/Button";
-import { ArrowRight, Package, Factory, Handshake } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const paths = [
   {
-    icon: Package,
-    title: "I need to source commodities",
-    description: "Get competitive pricing and reliable supply from our global network.",
+    tag: "For Buyers",
+    title: "Source Commodities at Scale",
+    description: "Get competitive pricing, verified supply, and compliant documentation for your procurement programs.",
     cta: "Request a Quote",
     href: "/partner-with-us/buyers",
-    variant: "secondary" as const,
+    accent: true,
   },
   {
-    icon: Factory,
-    title: "I want to supply products",
-    description: "Join our supplier network and access international markets.",
+    tag: "For Suppliers",
+    title: "Join Our Global Supplier Network",
+    description: "Connect with international buyers and expand your market access through our verified supplier program.",
     cta: "Register as Supplier",
     href: "/partner-with-us/suppliers",
-    variant: "outline" as const,
+    accent: false,
   },
   {
-    icon: Handshake,
-    title: "I'm exploring a partnership",
-    description: "Discuss strategic collaboration and long-term commercial partnerships.",
-    cta: "Explore Partnership",
+    tag: "For Partners",
+    title: "Explore Strategic Collaboration",
+    description: "Long-term supply programs, joint ventures, and structured commercial partnerships.",
+    cta: "Start a Conversation",
     href: "/partner-with-us/partners",
-    variant: "outline" as const,
+    accent: false,
   },
 ];
 
 export default function CTABand() {
   return (
-    <section className="bg-[#0f2040] py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-            How Can We Help You?
+    <section className="bg-[var(--color-ink)] py-24 relative overflow-hidden">
+      {/* Background grid */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "linear-gradient(var(--color-gold) 1px, transparent 1px), linear-gradient(90deg, var(--color-gold) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
+            Work With Us
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+            One counterpart.<br />Every commercial need.
           </h2>
-          <p className="text-gray-300 max-w-xl mx-auto">
-            Choose the path that fits your commercial intent.
-          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {paths.map(({ icon: Icon, title, description, cta, href, variant }) => (
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {paths.map(({ tag, title, description, cta, href, accent }) => (
             <div
-              key={title}
-              className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-colors"
+              key={tag}
+              className={`relative rounded-[var(--radius-xl)] p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
+                accent
+                  ? "bg-[var(--color-gold)] text-[var(--color-ink)]"
+                  : "bg-white/4 border border-white/8 text-white hover:border-[var(--color-gold)]/30 hover:bg-white/6"
+              }`}
             >
-              <Icon className="w-8 h-8 text-[#c8a84b] mb-4" />
-              <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+              <span className={`text-[10px] font-bold uppercase tracking-widest mb-4 ${accent ? "text-[var(--color-ink)]/60" : "text-[var(--color-gold)]"}`}>
+                {tag}
+              </span>
+              <h3 className={`text-xl font-bold mb-3 leading-snug ${accent ? "text-[var(--color-ink)]" : "text-white"}`}>
+                {title}
+              </h3>
+              <p className={`text-sm leading-relaxed mb-8 flex-1 ${accent ? "text-[var(--color-ink)]/60" : "text-white/40"}`}>
                 {description}
               </p>
-              <Button href={href} variant={variant} size="sm">
+              <Link
+                href={href}
+                className={`inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group/cta ${
+                  accent
+                    ? "text-[var(--color-ink)]"
+                    : "text-[var(--color-gold)] hover:text-[var(--color-gold-light)]"
+                }`}
+              >
                 {cta}
-                <ArrowRight className="w-4 h-4" />
-              </Button>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
+              </Link>
             </div>
           ))}
         </div>

@@ -66,22 +66,22 @@ const industries = [
 export default function IndustriesPage() {
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-20">
+      <section className="bg-[var(--color-ink)] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Industries" }]} dark />
           <div className="mt-8 max-w-3xl">
-            <span className="text-[#c8a84b] text-xs font-bold uppercase tracking-widest mb-4 block">
+            <span className="text-[var(--color-gold)] text-xs font-bold uppercase tracking-widest mb-4 block">
               Sectors We Serve
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
               Commodity Solutions Tailored by Industry
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+            <p className="text-xl text-white/60 leading-relaxed mb-8">
               We understand that commodity requirements vary by industry. Our teams
               specialise in the specific procurement, logistics, and compliance needs
               of each sector we serve.
             </p>
-            <Button href="/contact" variant="secondary">
+            <Button href="/contact" variant="gold">
               Discuss Your Sector
               <ArrowRight className="w-4 h-4" />
             </Button>
@@ -100,12 +100,12 @@ export default function IndustriesPage() {
               <Link
                 key={slug}
                 href={`/industries/${slug}`}
-                className="block bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
+                className="block bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
-                <div className="w-12 h-12 bg-[#0f2040] rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[#c8a84b]" />
+                <div className="w-12 h-12 bg-[var(--color-ink)] rounded-lg flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-[var(--color-gold)]" />
                 </div>
-                <h3 className="font-bold text-[#0f2040] text-lg mb-2 group-hover:text-[#c8a84b] transition-colors">
+                <h3 className="font-bold text-[var(--color-ink)] text-lg mb-2 group-hover:text-[var(--color-gold)] transition-colors">
                   {title}
                 </h3>
                 <p className="text-sm text-[#6b7280] leading-relaxed mb-4">{description}</p>
@@ -119,7 +119,7 @@ export default function IndustriesPage() {
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center gap-1 text-sm font-medium text-[#0f2040] group-hover:text-[#c8a84b] transition-colors">
+                <div className="flex items-center gap-1 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)] transition-colors">
                   Learn more
                   <ArrowRight className="w-4 h-4" />
                 </div>

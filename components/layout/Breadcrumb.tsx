@@ -12,9 +12,9 @@ interface BreadcrumbProps {
 }
 
 export default function Breadcrumb({ items, dark = false }: BreadcrumbProps) {
-  const textColor = dark ? "text-gray-300" : "text-gray-500";
-  const activeColor = dark ? "text-[#c8a84b]" : "text-[#0f2040]";
-  const hoverColor = dark ? "hover:text-white" : "hover:text-[#0f2040]";
+  const textColor = dark ? "text-white/35" : "text-[var(--color-text-muted)]";
+  const activeColor = dark ? "text-[var(--color-gold)]" : "text-[var(--color-ink)]";
+  const hoverColor = dark ? "hover:text-white" : "hover:text-[var(--color-ink)]";
 
   return (
     <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm">
@@ -26,12 +26,9 @@ export default function Breadcrumb({ items, dark = false }: BreadcrumbProps) {
       </Link>
       {items.map((item, i) => (
         <span key={i} className="flex items-center gap-1.5">
-          <ChevronRight className={`w-3.5 h-3.5 ${textColor} flex-shrink-0`} />
+          <ChevronRight className={`w-3 h-3 ${textColor} flex-shrink-0`} />
           {item.href ? (
-            <Link
-              href={item.href}
-              className={`${textColor} ${hoverColor} transition-colors`}
-            >
+            <Link href={item.href} className={`${textColor} ${hoverColor} transition-colors`}>
               {item.label}
             </Link>
           ) : (

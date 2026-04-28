@@ -109,19 +109,19 @@ export default async function SectorPage({
 
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-20">
+      <section className="bg-[var(--color-ink)] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb
             items={[{ label: "Products", href: "/products" }, { label: data.title }]}
             dark
           />
           <div className="mt-8 max-w-3xl">
-            <Icon className="w-10 h-10 text-[#c8a84b] mb-4" />
+            <Icon className="w-10 h-10 text-[var(--color-gold)] mb-4" />
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">{data.title}</h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+            <p className="text-xl text-white/60 leading-relaxed mb-8">
               {data.fullDescription}
             </p>
-            <Button href="/partner-with-us/buyers" variant="secondary">
+            <Button href="/partner-with-us/buyers" variant="gold">
               Request a Quote
               <ArrowRight className="w-4 h-4" />
             </Button>
@@ -137,9 +137,9 @@ export default async function SectorPage({
               <Link
                 key={slug}
                 href={`/products/${sector}/${slug}`}
-                className="block bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
+                className="block bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
-                <h3 className="font-bold text-[#0f2040] text-lg mb-2 group-hover:text-[#c8a84b] transition-colors">
+                <h3 className="font-bold text-[var(--color-ink)] text-lg mb-2 group-hover:text-[var(--color-gold)] transition-colors">
                   {name}
                 </h3>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -152,7 +152,7 @@ export default async function SectorPage({
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center gap-1 text-sm font-medium text-[#0f2040] group-hover:text-[#c8a84b]">
+                <div className="flex items-center gap-1 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)]">
                   View family
                   <ArrowRight className="w-4 h-4" />
                 </div>
@@ -162,11 +162,11 @@ export default async function SectorPage({
         </div>
       </section>
 
-      <section className="py-12 bg-[#f8f9fa]">
+      <section className="py-12 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 gap-8">
             <div>
-              <h3 className="font-bold text-[#0f2040] mb-3">Key Origins</h3>
+              <h3 className="font-bold text-[var(--color-ink)] mb-3">Key Origins</h3>
               <div className="flex flex-wrap gap-2">
                 {data.origins.map((o) => (
                   <span
@@ -179,7 +179,7 @@ export default async function SectorPage({
               </div>
             </div>
             <div>
-              <h3 className="font-bold text-[#0f2040] mb-3">Logistics Modes</h3>
+              <h3 className="font-bold text-[var(--color-ink)] mb-3">Logistics Modes</h3>
               <div className="flex flex-wrap gap-2">
                 {data.logistics.map((l) => (
                   <span

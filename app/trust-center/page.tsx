@@ -36,17 +36,17 @@ const faqs = [
 export default function TrustCenterPage() {
   return (
     <PageLayout>
-      <section className="bg-[#0f2040] text-white py-20">
+      <section className="bg-[var(--color-ink)] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Trust Center" }]} dark />
           <div className="mt-8 max-w-3xl">
-            <span className="text-[#c8a84b] text-xs font-bold uppercase tracking-widest mb-4 block">Compliance & Governance</span>
+            <span className="text-[var(--color-gold)] text-xs font-bold uppercase tracking-widest mb-4 block">Compliance & Governance</span>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">Trust Center</h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+            <p className="text-xl text-white/60 leading-relaxed mb-8">
               Your due diligence resource. Certificates, policies, compliance
               documentation, and governance information in one place.
             </p>
-            <Button href="/contact" variant="secondary">
+            <Button href="/contact" variant="gold">
               Contact Compliance Team
               <ArrowRight className="w-4 h-4" />
             </Button>
@@ -60,11 +60,11 @@ export default function TrustCenterPage() {
           <SectionHeader eyebrow="Formal Credentials" title="Certificates & Registrations" />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {certificates.map(({ name, description, issuer }) => (
-              <div key={name} className="bg-[#f8f9fa] border border-[#e5e7eb] rounded-xl p-6 text-center">
-                <Award className="w-8 h-8 text-[#c8a84b] mx-auto mb-3" />
-                <h3 className="font-bold text-[#0f2040] mb-1">{name}</h3>
+              <div key={name} className="bg-[var(--color-surface)] border border-[#e5e7eb] rounded-xl p-6 text-center">
+                <Award className="w-8 h-8 text-[var(--color-gold)] mx-auto mb-3" />
+                <h3 className="font-bold text-[var(--color-ink)] mb-1">{name}</h3>
                 <p className="text-sm text-[#6b7280] mb-2">{description}</p>
-                <span className="text-xs text-[#c8a84b] font-medium">Issued by {issuer}</span>
+                <span className="text-xs text-[var(--color-gold)] font-medium">Issued by {issuer}</span>
               </div>
             ))}
           </div>
@@ -72,7 +72,7 @@ export default function TrustCenterPage() {
       </section>
 
       {/* Policy Library */}
-      <section className="py-20 bg-[#f8f9fa]">
+      <section className="py-20 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Governance" title="Policy Library" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -82,9 +82,9 @@ export default function TrustCenterPage() {
                 href={`/trust-center/${slug}`}
                 className="flex items-start gap-4 bg-white border border-[#e5e7eb] rounded-xl p-5 hover:shadow-md transition-all hover:-translate-y-0.5 group"
               >
-                <FileText className="w-5 h-5 text-[#c8a84b] flex-shrink-0 mt-0.5" />
+                <FileText className="w-5 h-5 text-[var(--color-gold)] flex-shrink-0 mt-0.5" />
                 <div>
-                  <h3 className="font-semibold text-[#0f2040] text-sm mb-1 group-hover:text-[#c8a84b] transition-colors">{title}</h3>
+                  <h3 className="font-semibold text-[var(--color-ink)] text-sm mb-1 group-hover:text-[var(--color-gold)] transition-colors">{title}</h3>
                   <p className="text-xs text-[#6b7280]">{description}</p>
                 </div>
               </Link>
@@ -101,9 +101,9 @@ export default function TrustCenterPage() {
             {faqs.map(({ q, a }) => (
               <div key={q} className="border border-[#e5e7eb] rounded-xl p-5">
                 <div className="flex items-start gap-3">
-                  <MessageCircle className="w-5 h-5 text-[#c8a84b] flex-shrink-0 mt-0.5" />
+                  <MessageCircle className="w-5 h-5 text-[var(--color-gold)] flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-semibold text-[#0f2040] mb-2">{q}</h3>
+                    <h3 className="font-semibold text-[var(--color-ink)] mb-2">{q}</h3>
                     <p className="text-sm text-[#6b7280] leading-relaxed">{a}</p>
                   </div>
                 </div>
@@ -113,12 +113,12 @@ export default function TrustCenterPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-[#0f2040]">
+      <section className="py-16 bg-[var(--color-ink)]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Shield className="w-10 h-10 text-[#c8a84b] mx-auto mb-4" />
+          <Shield className="w-10 h-10 text-[var(--color-gold)] mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-white mb-3">Need More Information?</h2>
-          <p className="text-gray-300 mb-6">Our compliance team is available to assist procurement and legal reviewers.</p>
-          <Button href="/contact" variant="secondary">Contact Compliance <ArrowRight className="w-4 h-4" /></Button>
+          <p className="text-white/60 mb-6">Our compliance team is available to assist procurement and legal reviewers.</p>
+          <Button href="/contact" variant="gold">Contact Compliance <ArrowRight className="w-4 h-4" /></Button>
         </div>
       </section>
     </PageLayout>
