@@ -102,9 +102,20 @@ export default function Footer() {
       <div className="border-t border-border">
         <Container className="py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-text-muted text-center sm:text-left">
-              Copyright {year} [Company Legal Name]. All rights reserved.
-            </p>
+            <div className="text-xs text-text-muted text-center sm:text-left space-y-1">
+              <p>Copyright {year} [Company Legal Name]. All rights reserved.</p>
+              <p>
+                Built and maintanence by{' '}
+                <Link
+                  href="https://www.growrixos.com"
+                  className="text-text-secondary hover:text-white underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Growrix OS
+                </Link>
+              </p>
+            </div>
             <div className="flex items-center gap-5">
               {footerLinks.legal.map((link) => (
                 <Link
