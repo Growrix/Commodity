@@ -100,13 +100,13 @@ Studio: cms.yourdomain.com ✅
 
 ```bash
 # ১. ফ্রন্টএন্ড বিল্ড
-npm --prefix web run build
+npm --prefix frontend run build
 
 # ২. ফ্রন্টএন্ড টেস্ট চালান
-npm --prefix web run test
+npm --prefix frontend run test
 
 # ৩. স্ট্যাটিক আউটপুট দেখুন
-ls -la web/.next/static
+ls -la frontend/.next/static
 ```
 
 সবকিছু ✅ সফল হলে লাইভ ডেপ্লয় করতে পারেন।
