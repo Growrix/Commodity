@@ -8,5 +8,8 @@
     "start": "npm --prefix frontend run start",
     "lint": "npm --prefix frontend run lint",
     "typecheck": "npm --prefix frontend run typecheck"
+  },
+  "dependencies": {
+    "next": "^15.3.1"
   }
 }
