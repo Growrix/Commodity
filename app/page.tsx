@@ -9,11 +9,14 @@ import {
   TrendingUp,
   MapPin,
   ChevronRight,
+  CheckCircle2,
 } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import TrustStrip from "@/components/sections/TrustStrip";
 import CTABand from "@/components/sections/CTABand";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+
+/* ─── Data ─────────────────────────────────────────────────── */
 
 const stats = [
   { value: "$2B+", label: "Annual Trade Volume", detail: "Across all sectors" },
@@ -28,24 +31,28 @@ const sectors = [
     description: "Wheat, corn, soy, rice, sunflower oil, and over 120 agricultural commodities sourced globally.",
     href: "/products/agriculture",
     image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80",
+    tag: "120+ commodities",
   },
   {
     title: "Energy",
     description: "Refined petroleum, diesel, jet fuel, LPG, and petrochemical feedstocks across major trade routes.",
     href: "/products/energy",
-    image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=800&q=80",
+    tag: "25+ products",
   },
   {
     title: "Fertilizers",
     description: "Urea, DAP, MAP, NPK blends, potash, and nitrogen solutions for global agriculture inputs.",
     href: "/products/fertilizers",
     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
+    tag: "40+ formulations",
   },
   {
     title: "Industrial",
     description: "Sulphur, caustic soda, industrial chemicals, base metals, and specialty materials for manufacturing.",
     href: "/products/industrial-materials",
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80",
+    tag: "60+ materials",
   },
 ];
 
@@ -55,48 +62,52 @@ const capabilities = [
     title: "Global Origination",
     description: "40+ verified source markets across Black Sea, LATAM, SEA, and Sub-Saharan Africa.",
     href: "/capabilities/origination",
+    detail: "Multi-origin sourcing",
   },
   {
     icon: Shield,
     title: "Compliant Documentation",
     description: "SGS-inspected, L/C-ready, and aligned with GAFTA, FOSFA, and ISCC standards.",
     href: "/capabilities/quality-assurance",
+    detail: "Tier-1 bank accepted",
   },
   {
     icon: Zap,
     title: "Trade Finance",
     description: "Structured payment terms: L/C, D/A, D/P, CAD, and deferred payment programs.",
     href: "/capabilities/trade-finance",
+    detail: "Flexible instruments",
   },
   {
     icon: TrendingUp,
     title: "End-to-End Logistics",
     description: "Door-to-port, CIF, FOB, and multimodal freight solutions with real-time tracking.",
     href: "/capabilities/logistics",
+    detail: "Incoterms 2020",
   },
 ];
 
 const corridors = [
   {
     route: "Black Sea → Asia",
-    description: "Wheat, corn, and sunflower oil from Ukraine, Romania, and Russia to Southeast Asian markets.",
+    description: "Wheat, corn, and sunflower oil from Ukraine, Romania to Southeast Asian markets.",
     volume: "1.2M MT / year",
     href: "/markets/corridors/black-sea-asia",
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80",
   },
   {
     route: "LATAM → MENA",
     description: "Soybeans, corn, and sugar from Brazil and Argentina to North Africa and Gulf markets.",
     volume: "800K MT / year",
     href: "/markets/corridors/latam-mena",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
   },
   {
     route: "Oceania → Asia",
-    description: "Premium grain, cotton, and meat exports from Australia and New Zealand into Asia-Pacific.",
+    description: "Premium grain, cotton, and exports from Australia into Asia-Pacific buyers.",
     volume: "600K MT / year",
     href: "/markets/corridors/oceania-asia",
-    image: "https://images.unsplash.com/photo-1494522358652-f30e61a60313?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1494522358652-f30e61a60313?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -127,14 +138,23 @@ const insights = [
   },
 ];
 
+const trustPoints = [
+  "Single accountable counterpart from origin to delivery",
+  "Tier-1 bank compliant documentation on every shipment",
+  "Third-party inspection at load and discharge ports",
+  "Zero sanctions record across 20+ years of operations",
+];
+
+/* ─── Page ──────────────────────────────────────────────────── */
+
 export default function HomePage() {
   return (
     <PageLayout padTop={false}>
-      {/* ======================================================
+
+      {/* ══════════════════════════════════════════════════════
           HERO — full viewport, image-heavy
-      ====================================================== */}
+      ══════════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex flex-col justify-end bg-[var(--color-ink)] overflow-hidden">
-        {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2400&q=80"
@@ -158,7 +178,6 @@ export default function HomePage() {
           }}
         />
 
-        {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-36">
           <div className="max-w-3xl">
             <div className="animate-fade-up flex items-center gap-3 mb-8">
@@ -219,9 +238,9 @@ export default function HomePage() {
       {/* Trust ticker */}
       <TrustStrip />
 
-      {/* ======================================================
-          SECTORS — image grid
-      ====================================================== */}
+      {/* ══════════════════════════════════════════════════════
+          SECTORS — 4-column image cards
+      ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-16">
@@ -243,7 +262,7 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {sectors.map(({ title, description, href, image }, i) => (
+            {sectors.map(({ title, description, href, image, tag }, i) => (
               <AnimatedSection key={title} delay={i * 80}>
                 <Link
                   href={href}
@@ -257,11 +276,16 @@ export default function HomePage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/30 to-transparent" />
+                  <div className="absolute top-5 left-5">
+                    <span className="bg-[var(--color-ink)]/70 backdrop-blur-sm text-[var(--color-gold)] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-[var(--color-gold)]/20">
+                      {tag}
+                    </span>
+                  </div>
                   <div className="absolute inset-x-0 bottom-0 p-6">
                     <h3 className="text-white font-bold text-xl mb-2">{title}</h3>
-                    <p className="text-white/50 text-sm leading-relaxed mb-4 line-clamp-2">{description}</p>
-                    <div className="flex items-center gap-1 text-[var(--color-gold)] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+                    <p className="text-white/55 text-sm leading-relaxed mb-4 line-clamp-2">{description}</p>
+                    <div className="flex items-center gap-1.5 text-[var(--color-gold)] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                       Explore sector <ChevronRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -272,16 +296,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ======================================================
-          CAPABILITIES — dark section with image
-      ====================================================== */}
+      {/* ══════════════════════════════════════════════════════
+          CAPABILITIES — dark section with image bg
+      ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[var(--color-ink)] relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?auto=format&fit=crop&w=2400&q=80"
-            alt="Logistics and shipping"
+            alt="Logistics operations"
             fill
-            className="object-cover object-center opacity-10"
+            className="object-cover object-center opacity-[0.08]"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-ink)] via-transparent to-[var(--color-ink)]" />
         </div>
@@ -300,15 +325,16 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {capabilities.map(({ icon: Icon, title, description, href }, i) => (
+            {capabilities.map(({ icon: Icon, title, description, href, detail }, i) => (
               <AnimatedSection key={title} delay={i * 100}>
                 <Link
                   href={href}
-                  className="group flex flex-col p-7 rounded-[var(--radius-xl)] bg-white/4 border border-white/8 hover:border-[var(--color-gold)]/40 hover:bg-white/7 transition-all duration-300"
+                  className="group flex flex-col p-7 rounded-[var(--radius-xl)] bg-white/[0.04] border border-white/[0.08] hover:border-[var(--color-gold)]/40 hover:bg-white/[0.07] transition-all duration-300 h-full"
                 >
                   <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/20 flex items-center justify-center mb-6 group-hover:bg-[var(--color-gold)]/20 transition-colors">
                     <Icon className="w-5 h-5 text-[var(--color-gold)]" />
                   </div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-gold)]/50 mb-3">{detail}</div>
                   <h3 className="text-white font-semibold text-base mb-2.5">{title}</h3>
                   <p className="text-white/35 text-sm leading-relaxed flex-1">{description}</p>
                   <div className="mt-6 flex items-center gap-1 text-[var(--color-gold)]/50 text-sm font-medium group-hover:text-[var(--color-gold)] transition-colors">
@@ -321,10 +347,117 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ======================================================
-          CORRIDORS — bento image grid
-      ====================================================== */}
+      {/* ══════════════════════════════════════════════════════
+          WHY TRUST US — split image + checklist
+      ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[var(--color-surface-off)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Image side */}
+            <AnimatedSection animation="reveal-left" className="relative">
+              <div className="relative aspect-[4/5] rounded-[var(--radius-xl)] overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1200&q=80"
+                  alt="Container shipping operations"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)]/60 to-transparent" />
+                {/* Floating stat badge */}
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="bg-[var(--color-ink)]/85 backdrop-blur-md rounded-[var(--radius-lg)] p-5 border border-white/10">
+                    <div className="grid grid-cols-2 gap-4">
+                      {stats.slice(0, 2).map(({ value, label }) => (
+                        <div key={label}>
+                          <div className="text-2xl font-bold text-[var(--color-gold)]">{value}</div>
+                          <div className="text-xs text-white/50 mt-0.5">{label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Content side */}
+            <AnimatedSection animation="reveal-right">
+              <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-4 block">
+                Why GlobalTrade
+              </span>
+              <h2 className="text-4xl sm:text-5xl font-bold text-[var(--color-ink)] leading-[1.1] tracking-tight mb-6">
+                The counterpart your procurement team can rely on.
+              </h2>
+              <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed mb-10">
+                We act as a principal — not a broker — taking full accountability for sourcing, logistics, quality inspection, and documentary compliance on every trade.
+              </p>
+              <ul className="space-y-4 mb-10">
+                {trustPoints.map((point) => (
+                  <li key={point} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[var(--color-gold)] flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <span className="text-[var(--color-text-secondary)]">{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 bg-[var(--color-ink)] text-white font-semibold px-6 py-3 rounded text-sm hover:bg-[var(--color-ink-muted)] transition-all duration-200"
+                >
+                  About Us <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/trust-center"
+                  className="inline-flex items-center gap-2 border border-[var(--color-ink)] text-[var(--color-ink)] font-medium px-6 py-3 rounded text-sm hover:bg-[var(--color-ink)] hover:text-white transition-all duration-200"
+                >
+                  Trust Center <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
+          STATS — full bleed dark image
+      ══════════════════════════════════════════════════════ */}
+      <section className="relative py-32 overflow-hidden bg-[var(--color-ink)]">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=2400&q=80"
+            alt="Global shipping containers"
+            fill
+            className="object-cover opacity-15"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)]/90 to-[var(--color-ink)]/60" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-16">
+            <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
+              By the Numbers
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+              Scale you can trade on.
+            </h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-12 gap-x-8">
+            {stats.map(({ value, label, detail }, i) => (
+              <AnimatedSection key={label} delay={i * 80} className="text-center">
+                <div className="text-5xl sm:text-6xl font-bold text-[var(--color-gold)] tracking-tight mb-2">{value}</div>
+                <div className="text-white font-semibold text-sm mb-1">{label}</div>
+                <div className="text-white/30 text-xs">{detail}</div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
+          CORRIDORS — 3-column bento image grid
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-16">
             <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
@@ -359,7 +492,7 @@ export default function HomePage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/40 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-7">
                     <div className="flex items-center gap-2 mb-3">
                       <MapPin className="w-3.5 h-3.5 text-[var(--color-gold)]" />
@@ -375,37 +508,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ======================================================
-          STATS — full bleed dark image section
-      ====================================================== */}
-      <section className="relative py-32 overflow-hidden bg-[var(--color-ink)]">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=2400&q=80"
-            alt="Global shipping containers"
-            fill
-            className="object-cover opacity-15"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)]/90 to-[var(--color-ink)]/60" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-12 gap-x-8">
-            {stats.map(({ value, label, detail }, i) => (
-              <AnimatedSection key={label} delay={i * 80} className="text-center">
-                <div className="text-5xl sm:text-6xl font-bold text-[var(--color-gold)] tracking-tight mb-2">{value}</div>
-                <div className="text-white font-semibold text-sm mb-1">{label}</div>
-                <div className="text-white/30 text-xs">{detail}</div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================
+      {/* ══════════════════════════════════════════════════════
           INSIGHTS — editorial card row
-      ====================================================== */}
-      <section className="py-28 bg-[var(--color-surface)]">
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-[var(--color-surface-off)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div>
@@ -418,7 +524,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/insights"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors group flex-shrink-0"
             >
               All insights{" "}
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -430,7 +536,7 @@ export default function HomePage() {
               <AnimatedSection key={href} delay={i * 80}>
                 <Link
                   href={href}
-                  className="group flex flex-col h-full rounded-[var(--radius-xl)] overflow-hidden border border-[var(--color-border)] hover:border-[var(--color-gold)]/30 hover:shadow-[var(--shadow-card-hover)] transition-all duration-300"
+                  className="group flex flex-col h-full rounded-[var(--radius-xl)] overflow-hidden bg-white border border-[var(--color-border)] hover:border-[var(--color-gold)]/30 hover:shadow-[var(--shadow-card-hover)] transition-all duration-300"
                 >
                   <div className="relative overflow-hidden bg-[var(--color-ink)]" style={{ aspectRatio: "16/9" }}>
                     <Image
@@ -466,12 +572,12 @@ export default function HomePage() {
       {/* CTA Band */}
       <CTABand />
 
-      {/* ======================================================
-          TRUST CLOSING
-      ====================================================== */}
+      {/* ══════════════════════════════════════════════════════
+          CERTIFICATIONS
+      ══════════════════════════════════════════════════════ */}
       <section className="py-16 bg-[var(--color-ink-soft)] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center">
+          <div className="text-center">
             <p className="text-white/25 text-xs font-bold uppercase tracking-widest mb-8">
               Certified and trusted by operators across 60+ countries
             </p>
@@ -479,13 +585,13 @@ export default function HomePage() {
               {["ISO 9001:2015", "GAFTA Member", "FOSFA Certified", "SGS Inspected", "ISCC Certified"].map((cert) => (
                 <div
                   key={cert}
-                  className="text-white/15 text-sm font-semibold tracking-wide hover:text-white/40 transition-colors cursor-default"
+                  className="text-white/20 text-sm font-semibold tracking-wide hover:text-white/50 transition-colors cursor-default"
                 >
                   {cert}
                 </div>
               ))}
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
     </PageLayout>
