@@ -14,7 +14,6 @@ import {
 import PageLayout from "@/components/layout/PageLayout";
 import TrustStrip from "@/components/sections/TrustStrip";
 import CTABand from "@/components/sections/CTABand";
-import AnimatedSection from "@/components/ui/AnimatedSection";
 
 /* ─── Data ─────────────────────────────────────────────────── */
 
@@ -152,7 +151,7 @@ export default function HomePage() {
     <PageLayout padTop={false}>
 
       {/* ══════════════════════════════════════════════════════
-          HERO — full viewport, image-heavy
+          HERO
       ══════════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex flex-col justify-end bg-[var(--color-ink)] overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -167,8 +166,6 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/80 to-[var(--color-ink)]/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/10 to-transparent" />
         </div>
-
-        {/* Grid overlay */}
         <div
           className="absolute inset-0 z-[1] opacity-[0.04]"
           style={{
@@ -177,7 +174,6 @@ export default function HomePage() {
             backgroundSize: "80px 80px",
           }}
         />
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-36">
           <div className="max-w-3xl">
             <div className="animate-fade-up flex items-center gap-3 mb-8">
@@ -186,21 +182,17 @@ export default function HomePage() {
                 Global Commodity Trading
               </span>
             </div>
-
             <h1 className="font-bold leading-[1.06] tracking-[-0.02em] text-white mb-7">
               <span className="block text-5xl sm:text-6xl lg:text-7xl animate-fade-up delay-100">
                 Trade Built
               </span>
               <span className="block text-5xl sm:text-6xl lg:text-7xl animate-fade-up delay-200">
-                for{" "}
-                <span className="text-gold-gradient">Commercial Scale.</span>
+                for <span className="text-gold-gradient">Commercial Scale.</span>
               </span>
             </h1>
-
             <p className="animate-fade-up delay-300 text-lg sm:text-xl text-white/55 leading-relaxed mb-10 max-w-xl">
               We connect buyers and suppliers across Agriculture, Energy, Fertilizers, and Industrial Materials — with structured logistics, compliant documentation, and verified quality at every touchpoint.
             </p>
-
             <div className="animate-fade-up delay-400 flex flex-wrap gap-4">
               <Link
                 href="/partner-with-us/buyers"
@@ -215,8 +207,6 @@ export default function HomePage() {
                 Learn About Us <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-
-            {/* Quick stats */}
             <div className="animate-fade-up delay-500 flex flex-wrap gap-x-10 gap-y-4 mt-16 pt-16 border-t border-white/8">
               {stats.map(({ value, label }) => (
                 <div key={label}>
@@ -227,8 +217,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 right-8 z-10 animate-float hidden lg:flex flex-col items-center gap-2">
           <div className="w-px h-12 bg-gradient-to-b from-transparent to-[var(--color-gold)]/50" />
           <div className="w-1.5 h-1.5 bg-[var(--color-gold)] rounded-full" />
@@ -239,11 +227,11 @@ export default function HomePage() {
       <TrustStrip />
 
       {/* ══════════════════════════════════════════════════════
-          SECTORS — 4-column image cards
+          SECTORS
       ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="mb-16">
+          <div className="mb-16">
             <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
               Product Sectors
             </span>
@@ -259,45 +247,44 @@ export default function HomePage() {
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
-          </AnimatedSection>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {sectors.map(({ title, description, href, image, tag }, i) => (
-              <AnimatedSection key={title} delay={i * 80}>
-                <Link
-                  href={href}
-                  className="group relative flex flex-col rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-ink)]"
-                  style={{ aspectRatio: "3/4" }}
-                >
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/30 to-transparent" />
-                  <div className="absolute top-5 left-5">
-                    <span className="bg-[var(--color-ink)]/70 backdrop-blur-sm text-[var(--color-gold)] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-[var(--color-gold)]/20">
-                      {tag}
-                    </span>
+            {sectors.map(({ title, description, href, image, tag }) => (
+              <Link
+                key={title}
+                href={href}
+                className="group relative flex flex-col rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-ink)]"
+                style={{ aspectRatio: "3/4" }}
+              >
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/30 to-transparent" />
+                <div className="absolute top-5 left-5">
+                  <span className="bg-[var(--color-ink)]/70 backdrop-blur-sm text-[var(--color-gold)] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-[var(--color-gold)]/20">
+                    {tag}
+                  </span>
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="text-white font-bold text-xl mb-2">{title}</h3>
+                  <p className="text-white/55 text-sm leading-relaxed mb-4 line-clamp-2">{description}</p>
+                  <div className="flex items-center gap-1.5 text-[var(--color-gold)] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                    Explore sector <ChevronRight className="w-4 h-4" />
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-6">
-                    <h3 className="text-white font-bold text-xl mb-2">{title}</h3>
-                    <p className="text-white/55 text-sm leading-relaxed mb-4 line-clamp-2">{description}</p>
-                    <div className="flex items-center gap-1.5 text-[var(--color-gold)] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                      Explore sector <ChevronRight className="w-4 h-4" />
-                    </div>
-                  </div>
-                </Link>
-              </AnimatedSection>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          CAPABILITIES — dark section with image bg
+          CAPABILITIES
       ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[var(--color-ink)] relative overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -310,9 +297,8 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-ink)] via-transparent to-[var(--color-ink)]" />
         </div>
-
         <div className="relative z-[2] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <div className="text-center mb-16">
             <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
               What We Do
             </span>
@@ -322,39 +308,37 @@ export default function HomePage() {
             <p className="mt-4 text-lg text-white/40 max-w-xl mx-auto">
               From sourcing to delivery — one partner for the full trade lifecycle.
             </p>
-          </AnimatedSection>
-
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {capabilities.map(({ icon: Icon, title, description, href, detail }, i) => (
-              <AnimatedSection key={title} delay={i * 100}>
-                <Link
-                  href={href}
-                  className="group flex flex-col p-7 rounded-[var(--radius-xl)] bg-white/[0.04] border border-white/[0.08] hover:border-[var(--color-gold)]/40 hover:bg-white/[0.07] transition-all duration-300 h-full"
-                >
-                  <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/20 flex items-center justify-center mb-6 group-hover:bg-[var(--color-gold)]/20 transition-colors">
-                    <Icon className="w-5 h-5 text-[var(--color-gold)]" />
-                  </div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-gold)]/50 mb-3">{detail}</div>
-                  <h3 className="text-white font-semibold text-base mb-2.5">{title}</h3>
-                  <p className="text-white/35 text-sm leading-relaxed flex-1">{description}</p>
-                  <div className="mt-6 flex items-center gap-1 text-[var(--color-gold)]/50 text-sm font-medium group-hover:text-[var(--color-gold)] transition-colors">
-                    Learn more <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              </AnimatedSection>
+            {capabilities.map(({ icon: Icon, title, description, href, detail }) => (
+              <Link
+                key={title}
+                href={href}
+                className="group flex flex-col p-7 rounded-[var(--radius-xl)] bg-white/[0.04] border border-white/[0.08] hover:border-[var(--color-gold)]/40 hover:bg-white/[0.07] transition-all duration-300 h-full"
+              >
+                <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/20 flex items-center justify-center mb-6 group-hover:bg-[var(--color-gold)]/20 transition-colors">
+                  <Icon className="w-5 h-5 text-[var(--color-gold)]" />
+                </div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-gold)]/50 mb-3">{detail}</div>
+                <h3 className="text-white font-semibold text-base mb-2.5">{title}</h3>
+                <p className="text-white/35 text-sm leading-relaxed flex-1">{description}</p>
+                <div className="mt-6 flex items-center gap-1 text-[var(--color-gold)]/50 text-sm font-medium group-hover:text-[var(--color-gold)] transition-colors">
+                  Learn more <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          WHY TRUST US — split image + checklist
+          WHY GLOBALTRADE — split image + trust points
       ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[var(--color-surface-off)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Image side */}
-            <AnimatedSection animation="reveal-left" className="relative">
+            <div className="relative">
               <div className="relative aspect-[4/5] rounded-[var(--radius-xl)] overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1200&q=80"
@@ -378,10 +362,10 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </AnimatedSection>
+            </div>
 
             {/* Content side */}
-            <AnimatedSection animation="reveal-right">
+            <div>
               <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-4 block">
                 Why GlobalTrade
               </span>
@@ -413,13 +397,13 @@ export default function HomePage() {
                   Trust Center <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </AnimatedSection>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          STATS — full bleed dark image
+          STATS — full bleed dark
       ══════════════════════════════════════════════════════ */}
       <section className="relative py-32 overflow-hidden bg-[var(--color-ink)]">
         <div className="absolute inset-0 z-0">
@@ -432,34 +416,33 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)]/90 to-[var(--color-ink)]/60" />
         </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <div className="text-center mb-16">
             <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
               By the Numbers
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold text-white leading-[1.1] tracking-tight">
               Scale you can trade on.
             </h2>
-          </AnimatedSection>
+          </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-12 gap-x-8">
-            {stats.map(({ value, label, detail }, i) => (
-              <AnimatedSection key={label} delay={i * 80} className="text-center">
+            {stats.map(({ value, label, detail }) => (
+              <div key={label} className="text-center">
                 <div className="text-5xl sm:text-6xl font-bold text-[var(--color-gold)] tracking-tight mb-2">{value}</div>
                 <div className="text-white font-semibold text-sm mb-1">{label}</div>
                 <div className="text-white/30 text-xs">{detail}</div>
-              </AnimatedSection>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          CORRIDORS — 3-column bento image grid
+          CORRIDORS
       ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[var(--color-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="mb-16">
+          <div className="mb-16">
             <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
               Trade Corridors
             </span>
@@ -475,45 +458,43 @@ export default function HomePage() {
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
-          </AnimatedSection>
-
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {corridors.map(({ route, description, volume, href, image }, i) => (
-              <AnimatedSection key={route} delay={i * 100}>
-                <Link
-                  href={href}
-                  className="group relative flex flex-col rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-ink)]"
-                  style={{ aspectRatio: "5/6" }}
-                >
-                  <Image
-                    src={image}
-                    alt={route}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/40 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-7">
-                    <div className="flex items-center gap-2 mb-3">
-                      <MapPin className="w-3.5 h-3.5 text-[var(--color-gold)]" />
-                      <span className="text-[var(--color-gold)] text-xs font-bold uppercase tracking-wider">{volume}</span>
-                    </div>
-                    <h3 className="text-white font-bold text-xl mb-2">{route}</h3>
-                    <p className="text-white/50 text-sm leading-relaxed">{description}</p>
+            {corridors.map(({ route, description, volume, href, image }) => (
+              <Link
+                key={route}
+                href={href}
+                className="group relative flex flex-col rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-ink)]"
+                style={{ aspectRatio: "5/6" }}
+              >
+                <Image
+                  src={image}
+                  alt={route}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/40 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-7">
+                  <div className="flex items-center gap-2 mb-3">
+                    <MapPin className="w-3.5 h-3.5 text-[var(--color-gold)]" />
+                    <span className="text-[var(--color-gold)] text-xs font-bold uppercase tracking-wider">{volume}</span>
                   </div>
-                </Link>
-              </AnimatedSection>
+                  <h3 className="text-white font-bold text-xl mb-2">{route}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{description}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          INSIGHTS — editorial card row
+          INSIGHTS
       ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[var(--color-surface-off)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div>
               <span className="text-[var(--color-gold)] text-[11px] font-bold uppercase tracking-[0.18em] mb-3 block">
                 Insights
@@ -526,44 +507,42 @@ export default function HomePage() {
               href="/insights"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-ink)] hover:text-[var(--color-gold)] transition-colors group flex-shrink-0"
             >
-              All insights{" "}
+              All insights
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-          </AnimatedSection>
-
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {insights.map(({ category, title, date, read, image, href }, i) => (
-              <AnimatedSection key={href} delay={i * 80}>
-                <Link
-                  href={href}
-                  className="group flex flex-col h-full rounded-[var(--radius-xl)] overflow-hidden bg-white border border-[var(--color-border)] hover:border-[var(--color-gold)]/30 hover:shadow-[var(--shadow-card-hover)] transition-all duration-300"
-                >
-                  <div className="relative overflow-hidden bg-[var(--color-ink)]" style={{ aspectRatio: "16/9" }}>
-                    <Image
-                      src={image}
-                      alt={title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-[var(--color-ink)]/80 backdrop-blur-sm text-[var(--color-gold)] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-                        {category}
-                      </span>
-                    </div>
+            {insights.map(({ category, title, date, read, image, href }) => (
+              <Link
+                key={href}
+                href={href}
+                className="group flex flex-col h-full rounded-[var(--radius-xl)] overflow-hidden bg-white border border-[var(--color-border)] hover:border-[var(--color-gold)]/30 hover:shadow-[var(--shadow-card-hover)] transition-all duration-300"
+              >
+                <div className="relative overflow-hidden bg-[var(--color-ink)]" style={{ aspectRatio: "16/9" }}>
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-[var(--color-ink)]/80 backdrop-blur-sm text-[var(--color-gold)] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                      {category}
+                    </span>
                   </div>
-                  <div className="flex flex-col flex-1 p-6">
-                    <h3 className="font-bold text-[var(--color-ink)] text-base leading-snug mb-4 group-hover:text-[var(--color-gold)] transition-colors">
-                      {title}
-                    </h3>
-                    <div className="mt-auto flex items-center gap-3 text-xs text-[var(--color-text-muted)]">
-                      <span>{date}</span>
-                      <span className="w-1 h-1 bg-[var(--color-border)] rounded-full" />
-                      <span>{read} read</span>
-                    </div>
+                </div>
+                <div className="flex flex-col flex-1 p-6">
+                  <h3 className="font-bold text-[var(--color-ink)] text-base leading-snug mb-4 group-hover:text-[var(--color-gold)] transition-colors">
+                    {title}
+                  </h3>
+                  <div className="mt-auto flex items-center gap-3 text-xs text-[var(--color-text-muted)]">
+                    <span>{date}</span>
+                    <span className="w-1 h-1 bg-[var(--color-border)] rounded-full" />
+                    <span>{read} read</span>
                   </div>
-                </Link>
-              </AnimatedSection>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -576,21 +555,16 @@ export default function HomePage() {
           CERTIFICATIONS
       ══════════════════════════════════════════════════════ */}
       <section className="py-16 bg-[var(--color-ink-soft)] border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-white/25 text-xs font-bold uppercase tracking-widest mb-8">
-              Certified and trusted by operators across 60+ countries
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-              {["ISO 9001:2015", "GAFTA Member", "FOSFA Certified", "SGS Inspected", "ISCC Certified"].map((cert) => (
-                <div
-                  key={cert}
-                  className="text-white/20 text-sm font-semibold tracking-wide hover:text-white/50 transition-colors cursor-default"
-                >
-                  {cert}
-                </div>
-              ))}
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white/25 text-xs font-bold uppercase tracking-widest mb-8">
+            Certified and trusted by operators across 60+ countries
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+            {["ISO 9001:2015", "GAFTA Member", "FOSFA Certified", "SGS Inspected", "ISCC Certified"].map((cert) => (
+              <div key={cert} className="text-white/20 text-sm font-semibold tracking-wide hover:text-white/50 transition-colors cursor-default">
+                {cert}
+              </div>
+            ))}
           </div>
         </div>
       </section>
